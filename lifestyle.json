@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Professional kitchen",
+    "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85",
+    "alt": "Professional kitchen",
+    "visible": true
+  },
+  {
+    "title": "Cooking ingredients",
+    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85",
+    "alt": "Cooking ingredients",
+    "visible": true
+  },
+  {
+    "title": "Kitchen preparation",
+    "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85",
+    "alt": "Kitchen preparation",
+    "visible": true
+  }
+]
