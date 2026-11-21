@@ -10,61 +10,60 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--black:#080909;--panel:#111313;--gold:#c6ad70;--white:#eeeae2;--muted:#aaa49a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--black);color:var(--white);font-family:Montserrat,Arial,sans-serif;font-weight:300}
 header{height:76px;background:#080909;display:flex;align-items:center;padding:12px clamp(24px,8vw,110px);border-bottom:1px solid #252522}
-.brand{font-family:Montserrat,sans-serif;color:var(--gold);letter-spacing:.24em;font-size:clamp(16px,2.4vw,23px);font-weight:500;line-height:1;white-space:nowrap}
+.brand{color:var(--gold);letter-spacing:.24em;font-size:clamp(16px,2.4vw,23px);font-weight:500;white-space:nowrap}
 .hero{height:calc(100vh - 146px);height:calc(100svh - 146px);min-height:420px;max-height:760px;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#171b1c}
 .hero img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:brightness(.68)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.72) 100%)}
 .hero-copy{position:relative;z-index:1;padding:0 clamp(28px,8.3vw,120px) 78px}
 .kicker{color:var(--gold);letter-spacing:.28em;font-size:clamp(8px,1.15vw,12px);white-space:nowrap;text-transform:uppercase;margin:0 0 20px}
-h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(64px,11vw,116px);font-weight:300;line-height:.9;margin:0;letter-spacing:.01em}
-.experience-line{color:#eeeae2;font-size:clamp(11px,1.25vw,14px);letter-spacing:.10em;font-weight:400;margin:22px 0 0;line-height:1.8;max-width:1000px}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(64px,11vw,116px);font-weight:300;line-height:.9;margin:0}
+.experience-line{font-size:clamp(11px,1.25vw,14px);letter-spacing:.1em;font-weight:400;margin:22px 0 0;line-height:1.8;max-width:1000px}
 nav{height:70px;position:sticky;top:0;z-index:5;background:rgba(8,9,9,.97);backdrop-filter:blur(10px);border-bottom:1px solid #292824;display:flex;justify-content:center;align-items:center;gap:clamp(5px,1vw,12px);padding:18px clamp(10px,3vw,24px)}
-nav a{color:#c2bbae;text-decoration:none;font-size:clamp(9px,.85vw,11px);font-weight:500;letter-spacing:.16em;white-space:nowrap;text-align:center;padding:12px clamp(9px,1.4vw,17px);border:1px solid rgba(198,173,112,.24);border-radius:3px;background:rgba(255,255,255,.015);transition:color .22s ease,border-color .22s ease,background .22s ease,transform .22s ease}
-nav a:hover{color:var(--gold);border-color:rgba(198,173,112,.72);background:rgba(198,173,112,.075);transform:translateY(-1px)}
-nav a.active{color:var(--gold);border-color:rgba(198,173,112,.82);background:rgba(198,173,112,.11);box-shadow:inset 0 -2px 0 rgba(198,173,112,.55)}
+nav a{color:#c2bbae;text-decoration:none;font-size:clamp(9px,.85vw,11px);font-weight:500;letter-spacing:.16em;white-space:nowrap;text-align:center;padding:12px clamp(9px,1.4vw,17px);border:1px solid rgba(198,173,112,.24);border-radius:3px;background:rgba(255,255,255,.015)}
+nav a.active,nav a:hover{color:var(--gold);border-color:rgba(198,173,112,.82);background:rgba(198,173,112,.1)}
 main{max-width:1250px;margin:auto;padding:0 clamp(22px,8.3vw,105px)}
-section{padding:65px 0 95px;scroll-margin-top:76px}
-section[hidden]{display:none!important}
-.section-title{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:42px;letter-spacing:.13em;color:var(--white);margin:0 0 34px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}
-.gallery figure{margin:0;overflow:hidden;background:#151515}
-.gallery img{display:block;width:100%;height:clamp(240px,36vw,440px);object-fit:cover;transition:transform .7s}
-.gallery figure:hover img{transform:scale(1.025)}
-.gallery figcaption{padding:8px 2px 0;color:#aaa49a;letter-spacing:.035em;font-size:10px;font-weight:300;line-height:1.5;text-transform:none}
-.gallery-message{color:var(--muted);font-size:12px;letter-spacing:.08em}
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.video-card{position:relative;min-height:260px;aspect-ratio:16/10;background:#171717;overflow:hidden}
-.video-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.72)}
-.play{position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:38px;text-shadow:0 2px 15px #000}
-.video-label{position:absolute;bottom:20px;left:22px;color:white;letter-spacing:.25em;font-size:10px;text-transform:uppercase}
-.bts-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
-.bts-grid img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.bts-grid .stack{display:grid;gap:24px}
-.bts-grid .stack img{height:calc(50% - 12px);min-height:138px}
-.cv{max-width:760px;border-top:1px solid #3a3529;border-bottom:1px solid #3a3529;padding:34px 0}
-.cv h3{font:300 32px "Cormorant Garamond",Georgia,serif;margin:0 0 12px}
-.cv p{color:#b8b1a6;line-height:1.9;font-size:13px}
-.cv a{display:inline-block;color:var(--gold);text-decoration:none;border:1px solid var(--gold);padding:14px 22px;margin-top:12px;font-size:10px;letter-spacing:.25em}
+section{padding:65px 0 95px;scroll-margin-top:76px}section[hidden]{display:none!important}
+.section-title{font:300 42px "Cormorant Garamond",Georgia,serif;letter-spacing:.13em;margin:0 0 34px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}.gallery figure{margin:0;overflow:hidden;background:#151515}
+.gallery img{display:block;width:100%;height:clamp(240px,36vw,440px);object-fit:cover}
+.gallery figcaption{padding:8px 2px 0;color:#aaa49a;font-size:10px;line-height:1.5}
+.gallery-message{color:var(--muted);font-size:12px}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.video-card{position:relative;min-height:260px;aspect-ratio:16/10;background:#171717;overflow:hidden}
+.video-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.72)}.play{position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:38px}
+.video-label{position:absolute;bottom:20px;left:22px;color:white;letter-spacing:.25em;font-size:10px}
+.bts-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}.bts-grid img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.bts-grid .stack{display:grid;gap:24px}.bts-grid .stack img{height:calc(50% - 12px);min-height:138px}
+.bio-copy{max-width:850px;color:#d0cbc1;font-size:13px;line-height:1.95;white-space:pre-line}
+.cv-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:38px;border:1px solid rgba(198,173,112,.25);background:#0d0f0f}
+.cv-sidebar{background:#171817;padding:30px 24px;color:#eae5dc}
+.cv-profile{text-align:center;padding-bottom:25px;border-bottom:1px solid rgba(198,173,112,.28)}
+.cv-profile img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 18px;display:block}
+.cv-name{font:300 32px "Cormorant Garamond",Georgia,serif;letter-spacing:.08em;margin:0}
+.cv-role{color:var(--gold);font-size:9px;letter-spacing:.17em;text-transform:uppercase;margin:7px 0 0}
+.cv-side-group{padding:21px 0 0}.cv-side-group h3{font:400 21px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 0 10px}
+.cv-side-group p,.cv-side-group li{font-size:10px;line-height:1.8;color:#d0cbc1;margin:0 0 4px;overflow-wrap:anywhere}
+.cv-side-group ul{padding-left:15px;margin:0}
+.cv-main{padding:32px 32px 38px 0}.cv-section{margin:0 0 28px}.cv-section h3{display:flex;align-items:center;gap:13px;font:300 29px "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;margin:0 0 16px}
+.cv-section h3:after{content:"";height:1px;background:rgba(198,173,112,.55);flex:1}
+.cv-entry{display:grid;grid-template-columns:112px minmax(0,1fr);gap:15px;margin:0 0 22px;align-items:start}
+.cv-boat-photo{width:112px;height:78px;object-fit:cover;background:#242522;border:1px solid rgba(198,173,112,.35)}
+.cv-entry h4{font-size:12px;line-height:1.55;font-weight:500;color:#f0ece4;margin:0}
+.cv-date{font-size:10px;color:var(--gold);text-align:right;float:right;margin-left:8px}
+.cv-entry p,.cv-section>p{font-size:10px;line-height:1.8;color:#bcb6ac;margin:6px 0 0}
+.cv-references{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cv-ref strong{font-size:11px;font-weight:500}
+.cv-ref p{font-size:10px;line-height:1.7;color:#bcb6ac;margin:5px 0 0}
 footer{text-align:center;padding:38px 20px 50px;border-top:1px solid #282722;color:#8e887e;font-size:9px;letter-spacing:.35em}
-@media(max-width:650px){
-header{height:64px;padding:10px 20px}
-.brand{font-size:17px;letter-spacing:.2em}
-.hero{height:calc(100vh - 122px);height:calc(100svh - 122px);min-height:390px;max-height:none}
-.hero-copy{padding-bottom:58px}
-.hero-copy .kicker{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px);font-weight:400}
-nav{height:58px;justify-content:center;overflow-x:hidden;gap:5px;padding:9px 10px}
-nav a{font-size:clamp(8px,2.5vw,10px);font-weight:500;letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
-.gallery,.video-grid{grid-template-columns:1fr;gap:28px}
-.gallery img{height:340px}
-section{padding:65px 0}
-.bts-grid{grid-template-columns:1fr}
-.bts-grid img{min-height:280px}
-.bts-grid .stack{grid-template-columns:1fr 1fr}
-.bts-grid .stack img{height:210px;min-height:0}
+@media(max-width:700px){
+header{height:64px;padding:10px 20px}.brand{font-size:17px;letter-spacing:.2em}
+.hero{height:calc(100svh - 122px);min-height:390px}.hero-copy{padding-bottom:58px}.hero-copy .kicker{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px)}
+nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
+.gallery,.video-grid{grid-template-columns:1fr;gap:28px}.gallery img{height:340px}section{padding:55px 0}
+.bts-grid{grid-template-columns:1fr}.bts-grid img{min-height:280px}.bts-grid .stack{grid-template-columns:1fr 1fr}.bts-grid .stack img{height:210px;min-height:0}
+.cv-layout{grid-template-columns:1fr;gap:0}.cv-sidebar{padding:25px 22px}.cv-main{padding:28px 22px 34px}.cv-profile img{width:115px;height:115px}
+.cv-side-group ul{columns:2;column-gap:20px}.cv-entry{grid-template-columns:88px minmax(0,1fr);gap:12px}.cv-boat-photo{width:88px;height:68px}.cv-entry h4{font-size:11px}.cv-date{font-size:9px}.cv-section h3{font-size:26px}.cv-references{gap:10px}
 }
 </style>
 </head>
@@ -72,153 +71,35 @@ section{padding:65px 0}
 <header><div class="brand">CHEF ASH BERGH</div></header>
 <div class="hero">
 <img id="hero-image" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=85" alt="Ash Bergh">
-<div class="hero-copy">
-<p class="kicker">Private Chef · Yacht Specialist</p>
-<h1>Ash Bergh</h1>
-<p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p>
+<div class="hero-copy"><p class="kicker">Private Chef · Yacht Specialist</p><h1>Ash Bergh</h1>
+<p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p></div>
 </div>
-</div>
-<nav aria-label="Portfolio navigation">
-<a href="#food">FOOD</a>
-<a href="#videos">VIDEOS</a>
-<a href="#behind">LIFESTYLE</a>
-<a href="#cv">CV</a>
-<a href="#bio">BIO</a>
-</nav>
+<nav aria-label="Portfolio navigation"><a href="#food">FOOD</a><a href="#videos">VIDEOS</a><a href="#behind">LIFESTYLE</a><a href="#cv">CV</a><a href="#bio">BIO</a></nav>
 <main>
-<section id="food" hidden>
-<h2 class="section-title">Food</h2>
-<div class="gallery" id="food-gallery"><p class="gallery-message">Loading food photographs...</p></div>
-</section>
-<section id="videos" hidden>
-<h2 class="section-title">Videos</h2>
-<div class="video-grid">
+<section id="food" hidden><h2 class="section-title">Food</h2><div class="gallery" id="food-gallery"><p class="gallery-message">Loading food photographs...</p></div></section>
+<section id="videos" hidden><h2 class="section-title">Videos</h2><div class="video-grid">
 <div class="video-card"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85" alt="Chef preparing food"><div class="play">▶</div><div class="video-label">Kitchen moments</div></div>
-<div class="video-card"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=85" alt="Chef plating food"><div class="play">▶</div><div class="video-label">Plating</div></div>
-</div>
-</section>
-<section id="behind" hidden>
-<h2 class="section-title">Lifestyle</h2>
-<div class="bts-grid">
+<div class="video-card"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=85" alt="Chef plating food"><div class="play">▶</div><div class="video-label">Plating</div></div></div></section>
+<section id="behind" hidden><h2 class="section-title">Lifestyle</h2><div class="bts-grid">
 <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85" alt="Professional kitchen">
-<div class="stack">
-<img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85" alt="Cooking ingredients">
-<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85" alt="Kitchen preparation">
-</div>
-</div>
-</section>
-<section id="cv" hidden>
-<h2 class="section-title">CV</h2>
-<div class="cv">
-<h3>Ash Bergh</h3>
-<p>Private Chef · Yacht Specialist</p>
-<p>This is a placeholder for your professional biography, yachting experience, qualifications and references. Your original CV content can be added here when the template is approved.</p>
-<a href="#" onclick="alert('Your CV PDF will be linked here.');return false;">DOWNLOAD CV</a>
-</div>
-</section>
-<section id="bio" hidden>
-<h2 class="section-title">Bio</h2>
-<div class="cv">
-<h3>About Ash</h3>
-<p>Your personal biography will go here.</p>
-<p>This space is reserved for a short introduction, your approach to food and hospitality, and the experience that shapes your work as a yacht chef.</p>
-</div>
-</section>
+<div class="stack"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85" alt="Cooking ingredients"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85" alt="Kitchen preparation"></div></div></section>
+<section id="cv" hidden><h2 class="section-title">Curriculum Vitae</h2><div id="cv-content"><p class="gallery-message">Loading CV...</p></div></section>
+<section id="bio" hidden><h2 class="section-title">Bio</h2><div class="bio-copy" id="bio-copy">Loading biography...</div></section>
 </main>
 <footer>CHEF ASH BERGH · AVAILABLE FOR CHARTER ENQUIRIES</footer>
 <script>
-const links = [...document.querySelectorAll('nav a')];
-const sections = links.map(link => document.querySelector(link.getAttribute('href')));
-
-// Always start on the landing page: nothing selected and no section open.
-sections.forEach(section => {
-  if (section) section.hidden = true;
-});
-links.forEach(link => link.classList.remove('active'));
-
-// Remove any old URL hash so refreshing never reopens a section.
-if (location.hash) {
-  history.replaceState(null, '', location.pathname + location.search);
-}
-
-// Open a section only when its tab is clicked.
-function showPanel(id) {
-  sections.forEach(section => {
-    if (section) section.hidden = section.id !== id;
-  });
-  links.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-  });
-  history.replaceState(null, '', '#' + id);
-  window.scrollTo({
-    top: document.querySelector('nav').offsetTop,
-    behavior: 'smooth'
-  });
-}
-
-links.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    showPanel(link.getAttribute('href').slice(1));
-  });
-});
-
-// Load every visible food entry from food.json.
-// Resolve image paths from the GitHub Pages project folder.
-async function loadFoodGallery() {
-  const gallery = document.getElementById('food-gallery');
-  try {
-    const response = await fetch(new URL('food.json', document.baseURI), {cache: 'no-store'});
-    if (!response.ok) throw new Error('Could not load food.json: ' + response.status);
-    const dishes = await response.json();
-    const visibleDishes = dishes.filter(dish => dish.visible === true && dish.image && dish.image.trim());
-
-    gallery.replaceChildren();
-
-    if (visibleDishes.length === 0) {
-      gallery.innerHTML = '<p class="gallery-message">No food photographs are currently marked visible.</p>';
-      return;
-    }
-
-    visibleDishes.forEach(dish => {
-      const figure = document.createElement('figure');
-      const img = document.createElement('img');
-      const caption = document.createElement('figcaption');
-
-      const cleanImagePath = dish.image.replace(/^\/+/, '');
-      img.src = new URL(cleanImagePath, document.baseURI).href;
-      img.alt = dish.alt || 'Food photograph';
-      img.loading = 'lazy';
-
-      caption.textContent = dish.alt || '';
-      if (!caption.textContent.trim()) caption.hidden = true;
-
-      figure.appendChild(img);
-      figure.appendChild(caption);
-      gallery.appendChild(figure);
-    });
-  } catch (error) {
-    gallery.innerHTML = '<p class="gallery-message">Food photographs could not be loaded. Please check food.json.</p>';
-    console.error(error);
-  }
-}
-// Load the homepage photograph selected in the Pages CMS homepage settings.
-async function loadHeroImage() {
-  try {
-    const response = await fetch(new URL('site.json', document.baseURI), {cache: 'no-store'});
-    if (!response.ok) throw new Error('Could not load site.json: ' + response.status);
-    const site = await response.json();
-    if (site.hero_image) {
-      const cleanImagePath = site.hero_image.replace(/^\/+/, '');
-      document.getElementById('hero-image').src = new URL(cleanImagePath, document.baseURI).href;
-    }
-  } catch (error) {
-    console.error('Homepage photograph could not be loaded:', error);
-  }
-}
-loadHeroImage();
-
-loadFoodGallery();
+const links=[...document.querySelectorAll('nav a')],sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+sections.forEach(s=>{if(s)s.hidden=true});links.forEach(a=>a.classList.remove('active'));
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+function showPanel(id){sections.forEach(s=>{if(s)s.hidden=s.id!==id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));history.replaceState(null,'','#'+id);window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});}
+links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPanel(a.getAttribute('href').slice(1));}));
+async function loadJSON(file){const r=await fetch(new URL(file,document.baseURI),{cache:'no-store'});if(!r.ok)throw Error(file+' '+r.status);return r.json();}
+async function loadFoodGallery(){const g=document.getElementById('food-gallery');try{const dishes=await loadJSON('food.json');g.replaceChildren();dishes.filter(d=>d.visible===true&&d.image&&d.image.trim()).forEach(d=>{const f=document.createElement('figure'),i=document.createElement('img'),c=document.createElement('figcaption');i.src=new URL(d.image.replace(/^\/+/,''),document.baseURI).href;i.alt=d.alt||'Food photograph';i.loading='lazy';c.textContent=d.alt||'';if(!c.textContent.trim())c.hidden=true;f.append(i,c);g.append(f);});}catch(e){g.innerHTML='<p class="gallery-message">Food photographs could not be loaded.</p>';console.error(e);}}
+async function loadHeroImage(){try{const s=await loadJSON('site.json');if(s.hero_image)document.getElementById('hero-image').src=new URL(s.hero_image.replace(/^\/+/,''),document.baseURI).href;}catch(e){console.error(e);}}
+async function loadBio(){try{const s=await loadJSON('site.json');const b=s.bio_detail||s.bio_intro||'';document.getElementById('bio-copy').textContent=b;}catch(e){document.getElementById('bio-copy').textContent='';}}
+async function loadCV(){const root=document.getElementById('cv-content');try{const d=await loadJSON('cv.json');const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const side=(title,items)=>`<div class="cv-side-group"><h3>${esc(title)}</h3>${items.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`;const boat=(v,idx)=>{const photo=[d.moonshadow_image,d.diam_image,d.primadonna_image][idx]||v.image||'';return `<article class="cv-entry"><img class="cv-boat-photo" src="${esc(photo)}" alt="${esc(v.name)}" onerror="this.style.visibility='hidden'"><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`};const entry=(v)=>`<article class="cv-entry"><div></div><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;root.innerHTML=`<div class="cv-layout"><aside class="cv-sidebar"><div class="cv-profile"><img src="${esc(d.profile_image)}" alt="Ash Bergh"><h3 class="cv-name">ASH BERGH</h3><p class="cv-role">Yacht Chef · Deck Aspirant</p></div>${side('Contact',d.contact)}${side('Paperwork',d.paperwork)}${side('Personal',d.personal)}</aside><div class="cv-main"><div class="cv-section"><h3>Yachting Experience</h3>${d.yachting.map(boat).join('')}</div><div class="cv-section"><h3>Land-Based Experience</h3>${d.land_based.map(entry).join('')}</div><div class="cv-section"><h3>References</h3><div class="cv-references">${d.references.map(r=>`<div class="cv-ref"><strong>${esc(r.name)}</strong><p>${esc(r.role)}</p><p>${esc(r.contact)}</p></div>`).join('')}</div></div></div></div>`;}catch(e){root.innerHTML='<p class="gallery-message">CV details could not be loaded. Please check cv.json.</p>';console.error(e);}}
+loadFoodGallery();loadHeroImage();loadBio();loadCV();
 </script>
 </body>
 </html>
+HTML
