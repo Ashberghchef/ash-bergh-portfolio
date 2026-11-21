@@ -1,38 +1,32 @@
 [
   {
-    "title": "Selected dish",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Fine dining plated meat",
+    "image": "/media/images/file_00000000c278720780a8e30042c344b4-1.png",
+    "alt": "Steak · Truffle · Potato velouté",
     "visible": true
   },
   {
-    "title": "Seasonal cuisine",
-    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Fresh colourful plated food",
+    "image": "/media/images/20260705_191622-3.jpg",
+    "alt": "Fresh scallop · Trout caviar · S/D tomato cream · Mint oil",
     "visible": true
   },
   {
-    "title": "Freshly prepared",
-    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Artisan bread",
+    "image": "/media/images/Screenshot_20261121_150123_Gallery-1.jpg",
+    "alt": "Russian honey cake · Medovik",
     "visible": true
   },
   {
-    "title": "Fine dining",
-    "image": "https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Fine dining plate",
+    "image": "/media/images/IMG-20250507-WA0017-1.jpg",
+    "alt": "Fine Marinated zucchini · 100% acorn-fed Jamón Ibérico · Parmigiano  ",
     "visible": true
   },
   {
-    "title": "Fresh ingredients",
-    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Fresh salad",
+    "image": "/media/images/file_00000000829871f8aae3f5f145ef58a1-2.png",
+    "alt": "White fish · Miso crème · Salmon caviar · Coriander oil",
     "visible": true
   },
   {
-    "title": "On board",
-    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=85",
-    "alt": "Restaurant dish",
+    "image": "/media/images/20260428_190836-1.jpg",
+    "alt": "Savoury shortcrust · Green asparagus and pecorino purée · Roasted white asparagus",
     "visible": true
   }
 ]
