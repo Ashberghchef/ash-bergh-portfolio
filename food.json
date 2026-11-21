@@ -28,5 +28,13 @@
     "image": "/media/images/20260428_190836-1.jpg",
     "alt": "Savoury shortcrust · Green asparagus and pecorino purée · Roasted white asparagus",
     "visible": true
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_150715_Gallery-1.jpg",
+    "alt": "Steak · Pommes purée · Red wine jus",
+    "visible": false
+  },
+  {
+    "visible": false
   }
 ]
