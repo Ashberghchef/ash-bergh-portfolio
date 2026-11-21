@@ -1,0 +1,118 @@
+
+media:
+  - name: images
+    label: Photos
+    input: media/images
+    output: /media/images
+    categories: [image]
+  - name: documents
+    label: Documents
+    input: media/documents
+    output: /media/documents
+    categories: [document]
+
+content:
+  - name: site
+    label: Homepage, Bio & CV
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: hero_title
+        label: Professional title
+        type: string
+      - name: experience
+        label: Experience statement
+        type: text
+      - name: hero_image
+        label: Main photograph
+        type: image
+        options:
+          media: images
+      - name: bio_heading
+        label: Bio heading
+        type: string
+      - name: bio_intro
+        label: Bio introduction
+        type: text
+      - name: bio_detail
+        label: Bio
+        type: rich-text
+      - name: cv_description
+        label: CV introduction
+        type: text
+      - name: cv_file
+        label: CV PDF
+        type: file
+        options:
+          media: documents
+          extensions: [pdf]
+
+  - name: food
+    label: Food photographs
+    type: file
+    path: food.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Caption
+        type: string
+      - name: image
+        label: Photograph
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: Description
+        type: string
+      - name: visible
+        label: Show on website
+        type: boolean
+
+  - name: lifestyle
+    label: Lifestyle photographs
+    type: file
+    path: lifestyle.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Caption
+        type: string
+      - name: image
+        label: Photograph
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: Description
+        type: string
+      - name: visible
+        label: Show on website
+        type: boolean
+
+  - name: videos
+    label: Videos
+    type: file
+    path: videos.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Video title
+        type: string
+      - name: thumbnail
+        label: Thumbnail
+        type: image
+        options:
+          media: images
+      - name: video_url
+        label: Video link
+        type: string
+      - name: visible
+        label: Show on website
+        type: boolean
