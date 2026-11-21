@@ -149,6 +149,31 @@
     "visible": false
   },
   {
+    "image": "/media/images/Screenshot_20261121_162504_Gallery-1.jpg",
+    "alt": "Amarula · peppermint caramel · ginger orange",
+    "visible": false
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_162514_Gallery.jpg",
+    "alt": "Charcuterie · ceviche",
+    "visible": false
+  },
+  {
+    "image": "/media/images/20240723_142837.jpg",
+    "alt": "Chocolate · pistachio",
+    "visible": false
+  },
+  {
+    "image": "/media/images/20250611_142841.jpg",
+    "alt": "Quinoa · zucchini · goat’s cheese · fig",
+    "visible": false
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_163208_Gallery.jpg",
+    "alt": "White asparagus · bresaola · burrata · balsamic",
+    "visible": false
+  },
+  {
     "visible": false
   }
 ]
