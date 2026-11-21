@@ -63,5 +63,18 @@
     "image": "/media/images/file_00000000860c82119e1458c80693fcdb-1.png",
     "alt": "Lime Posset ",
     "visible": false
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_155652_Gallery.jpg",
+    "alt": "Brioche · Herbed goat’s cheese · Fennel · Marinated pear",
+    "visible": false
+  },
+  {
+    "image": "/media/images/20260417_192648.jpg",
+    "alt": "White fish · Mixed new potatoes · Pea purée",
+    "visible": false
+  },
+  {
+    "visible": false
   }
 ]
