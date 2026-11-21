@@ -95,11 +95,6 @@
     "visible": false
   },
   {
-    "image": "/media/images/IMG-20260407-WA0015-1.jpg",
-    "alt": "Melon · prosciutto · mint jelly",
-    "visible": false
-  },
-  {
     "image": "/media/images/file_00000000c2e071f8abeeca89f9302cce.png",
     "alt": "Foie gras pâté · chanterelle · truffle",
     "visible": false
@@ -229,6 +224,13 @@
     "visible": false
   },
   {
+    "image": "/media/images/IMG-20260407-WA0013-1.jpg",
+    "alt": "Jamón ibérico · balsamic pearls",
+    "visible": false
+  },
+  {
+    "image": "/media/images/IMG-20260407-WA0016.jpg",
+    "alt": "Smoked salmon · cream cheese · capers",
     "visible": false
   }
 ]
