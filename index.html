@@ -38,16 +38,14 @@ section{padding:65px 0 95px;scroll-margin-top:76px}section[hidden]{display:none!
 .bts-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}.bts-grid img{width:100%;height:100%;min-height:300px;object-fit:cover}
 .bts-grid .stack{display:grid;gap:24px}.bts-grid .stack img{height:calc(50% - 12px);min-height:138px}
 .bio-copy{max-width:850px;color:#d0cbc1;font-size:13px;line-height:1.95;white-space:pre-line}
+.cv-intro{margin:0 0 32px;padding:25px 28px;background:#111313;border-left:2px solid var(--gold);color:#d0cbc1;font-size:12px;line-height:1.95}
+.cv-intro p{margin:0 0 13px}.cv-intro p:last-child{margin-bottom:0}
+.cv-intro h3{font:300 25px "Cormorant Garamond",Georgia,serif;letter-spacing:.12em;color:var(--gold);margin:0 0 15px}
 .cv-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:38px;border:1px solid rgba(198,173,112,.25);background:#0d0f0f}
 .cv-sidebar{background:#171817;padding:30px 24px;color:#eae5dc}
-.cv-profile{text-align:center;padding-bottom:25px;border-bottom:1px solid rgba(198,173,112,.28)}
-.cv-profile img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 18px;display:block}
-.cv-name{font:300 32px "Cormorant Garamond",Georgia,serif;letter-spacing:.08em;margin:0}
-.cv-role{color:var(--gold);font-size:9px;letter-spacing:.17em;text-transform:uppercase;margin:7px 0 0}
-.cv-side-group{padding:21px 0 0}.cv-side-group h3{font:400 21px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 0 10px}
-.cv-side-group p,.cv-side-group li{font-size:10px;line-height:1.8;color:#d0cbc1;margin:0 0 4px;overflow-wrap:anywhere}
-.cv-side-group ul{padding-left:15px;margin:0}
-.cv-main{padding:32px 32px 38px 0}.cv-section{margin:0 0 28px}.cv-section h3{display:flex;align-items:center;gap:13px;font:300 29px "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;margin:0 0 16px}
+.cv-side-group{padding:0 0 21px}.cv-side-group h3{font:400 21px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 0 10px}
+.cv-side-group p{font-size:10px;line-height:1.8;color:#d0cbc1;margin:0 0 4px;overflow-wrap:anywhere}
+.cv-main{padding:32px 32px 38px 0}.cv-section{margin:0 0 30px}.cv-section h3{display:flex;align-items:center;gap:13px;font:300 29px "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;margin:0 0 16px}
 .cv-section h3:after{content:"";height:1px;background:rgba(198,173,112,.55);flex:1}
 .cv-entry{display:grid;grid-template-columns:112px minmax(0,1fr);gap:15px;margin:0 0 22px;align-items:start}
 .cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}
@@ -56,9 +54,12 @@ section{padding:65px 0 95px;scroll-margin-top:76px}section[hidden]{display:none!
 .cv-boat-frame span{font-size:8px;letter-spacing:.12em;color:var(--gold);text-align:center;padding:5px}
 .cv-entry h4{font-size:12px;line-height:1.55;font-weight:500;color:#f0ece4;margin:0}
 .cv-date{font-size:10px;color:var(--gold);text-align:right;float:right;margin-left:8px}
-.cv-entry p,.cv-section>p{font-size:10px;line-height:1.8;color:#bcb6ac;margin:6px 0 0}
-.cv-references{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cv-ref strong{font-size:11px;font-weight:500}
-.cv-ref p{font-size:10px;line-height:1.7;color:#bcb6ac;margin:5px 0 0}
+.cv-entry p{font-size:10px;line-height:1.8;color:#bcb6ac;margin:6px 0 0}
+.cv-references{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cv-ref{padding:19px 18px;background:#151716;border:1px solid rgba(198,173,112,.32);min-width:0}
+.cv-ref strong{display:block;font:400 21px "Cormorant Garamond",Georgia,serif;color:#eeeae2;margin:0 0 5px}
+.cv-ref .cv-ref-role{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 13px}
+.cv-ref .cv-ref-contact{font-size:10px;line-height:1.7;color:#c9c3b8;overflow-wrap:anywhere;margin:0;padding-top:11px;border-top:1px solid rgba(198,173,112,.22)}
 footer{text-align:center;padding:38px 20px 50px;border-top:1px solid #282722;color:#8e887e;font-size:9px;letter-spacing:.35em}
 @media(max-width:700px){
 header{height:64px;padding:10px 20px}.brand{font-size:17px;letter-spacing:.2em}
@@ -66,8 +67,11 @@ header{height:64px;padding:10px 20px}.brand{font-size:17px;letter-spacing:.2em}
 nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
 .gallery,.video-grid{grid-template-columns:1fr;gap:28px}.gallery img{height:340px}section{padding:55px 0}
 .bts-grid{grid-template-columns:1fr}.bts-grid img{min-height:280px}.bts-grid .stack{grid-template-columns:1fr 1fr}.bts-grid .stack img{height:210px;min-height:0}
-.cv-layout{grid-template-columns:1fr;gap:0}.cv-sidebar{padding:25px 22px}.cv-main{padding:28px 22px 34px}.cv-profile img{width:115px;height:115px}
-.cv-side-group ul{columns:2;column-gap:20px}.cv-entry{grid-template-columns:88px minmax(0,1fr);gap:12px}.cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}.cv-boat-frame{width:88px;height:68px}.cv-entry h4{font-size:11px}.cv-date{font-size:9px}.cv-section h3{font-size:26px}.cv-references{gap:10px}
+.cv-layout{grid-template-columns:1fr;gap:0}.cv-sidebar{padding:25px 22px}.cv-main{padding:28px 22px 34px}
+.cv-entry{grid-template-columns:88px minmax(0,1fr);gap:12px}.cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}.cv-boat-frame{width:88px;height:68px}
+.cv-entry h4{font-size:11px}.cv-date{font-size:9px}.cv-section h3{font-size:26px}
+.cv-intro{padding:20px 18px;font-size:11px}.cv-intro h3{font-size:23px}
+.cv-references{grid-template-columns:1fr;gap:12px}.cv-ref{padding:17px}
 }
 </style>
 </head>
@@ -87,7 +91,16 @@ nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);l
 <section id="behind" hidden><h2 class="section-title">Lifestyle</h2><div class="bts-grid">
 <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85" alt="Professional kitchen">
 <div class="stack"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85" alt="Cooking ingredients"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85" alt="Kitchen preparation"></div></div></section>
-<section id="cv" hidden><h2 class="section-title">Curriculum Vitae</h2><div id="cv-content"><p class="gallery-message">Loading CV...</p></div></section>
+<section id="cv" hidden>
+<h2 class="section-title">Curriculum Vitae</h2>
+<div class="cv-intro">
+<h3>Deck Aspirations</h3>
+<p>After several seasons in yachting and falling in love with life at sea, I’ve found myself increasingly drawn towards the deck. Having become competent in both the galley and interior, I’d like to broaden my knowledge and experience, filling in the gaps and developing a more complete understanding of what it takes to run a yacht.</p>
+<p>I’ve always enjoyed being part of the wider rhythm of life on board, and I love the idea of becoming someone who can turn their hand to just about anything on a yacht. Ultimately, I’d like the sea to remain a permanent fixture in my life, whether through my work or, one day, sailing a boat of my own.</p>
+<p>I see this as the beginning of a new chapter, with the longer-term ambition of working towards becoming a captain. For now, I’m looking forward to learning the ropes, getting stuck in and discovering another side of an industry that has already given me so much.</p>
+</div>
+<div id="cv-content"><p class="gallery-message">Loading CV...</p></div>
+</section>
 <section id="bio" hidden><h2 class="section-title">Bio</h2><div class="bio-copy" id="bio-copy">Loading biography...</div></section>
 </main>
 <footer>CHEF ASH BERGH · AVAILABLE FOR CHARTER ENQUIRIES</footer>
@@ -101,8 +114,32 @@ async function loadJSON(file){const r=await fetch(new URL(file,document.baseURI)
 async function loadFoodGallery(){const g=document.getElementById('food-gallery');try{const dishes=await loadJSON('food.json');g.replaceChildren();dishes.filter(d=>d.visible===true&&d.image&&d.image.trim()).forEach(d=>{const f=document.createElement('figure'),i=document.createElement('img'),c=document.createElement('figcaption');i.src=new URL(d.image.replace(/^\/+/,''),document.baseURI).href;i.alt=d.alt||'Food photograph';i.loading='lazy';c.textContent=d.alt||'';if(!c.textContent.trim())c.hidden=true;f.append(i,c);g.append(f);});}catch(e){g.innerHTML='<p class="gallery-message">Food photographs could not be loaded.</p>';console.error(e);}}
 async function loadHeroImage(){try{const s=await loadJSON('site.json');if(s.hero_image)document.getElementById('hero-image').src=new URL(s.hero_image.replace(/^\/+/,''),document.baseURI).href;}catch(e){console.error(e);}}
 async function loadBio(){try{const s=await loadJSON('site.json');const b=s.bio_detail||s.bio_intro||'';document.getElementById('bio-copy').textContent=b;}catch(e){document.getElementById('bio-copy').textContent='';}}
-async function loadCV(){const root=document.getElementById('cv-content');try{const d=await loadJSON('cv.json');const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const side=(title,items)=>`<div class="cv-side-group"><h3>${esc(title)}</h3>${items.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`;const boat=(v,idx)=>{const photo=[d.moonshadow_image,d.diam_image,d.primadonna_image][idx]||v.image||'';const label=String(v.name||'Yacht').split('·').pop().trim().toUpperCase();return `<article class="cv-entry"><div class="cv-boat-frame"><img src="${esc(photo)}" alt="${esc(v.name)}" onerror="this.style.display='none'"><span>${esc(label)} PHOTO</span></div><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`};const entry=(v)=>`<article class="cv-entry no-photo"><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;root.innerHTML=`<div class="cv-layout"><aside class="cv-sidebar"><div class="cv-profile"><img src="${esc(d.profile_image)}" alt="Ash Bergh"><h3 class="cv-name">ASH BERGH</h3><p class="cv-role">Yacht Chef · Deck Aspirant</p></div>${side('Contact',d.contact)}${side('Paperwork',d.paperwork)}${side('Personal',d.personal)}</aside><div class="cv-main"><div class="cv-section"><h3>Yachting Experience</h3>${d.yachting.map(boat).join('')}</div><div class="cv-section"><h3>Land-Based Experience</h3>${d.land_based.map(entry).join('')}</div><div class="cv-section"><h3>References</h3><div class="cv-references">${d.references.map(r=>`<div class="cv-ref"><strong>${esc(r.name)}</strong><p>${esc(r.role)}</p><p>${esc(r.contact)}</p></div>`).join('')}</div></div></div></div>`;}catch(e){root.innerHTML='<p class="gallery-message">CV details could not be loaded. Please check cv.json.</p>';console.error(e);}}
+async function loadCV(){
+const root=document.getElementById('cv-content');
+try{
+const d=await loadJSON('cv.json');
+const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const side=(title,items)=>`<div class="cv-side-group"><h3>${esc(title)}</h3>${items.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`;
+const boat=(v,idx)=>{
+const photo=[d.moonshadow_image,d.diam_image,d.primadonna_image][idx]||v.image||'';
+const label=String(v.name||'Yacht').split('·').pop().trim().toUpperCase();
+return `<article class="cv-entry"><div class="cv-boat-frame"><img src="${esc(photo)}" alt="${esc(v.name)}" onerror="this.style.display='none'"><span>${esc(label)} PHOTO</span></div><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;
+};
+const entry=v=>`<article class="cv-entry no-photo"><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;
+const emailOnly=value=>{const match=String(value||'').match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);return match?match[0]:'';};
+root.innerHTML=`<div class="cv-layout">
+<aside class="cv-sidebar">${side('Contact',d.contact)}${side('Paperwork',d.paperwork)}${side('Personal',d.personal)}</aside>
+<div class="cv-main">
+<div class="cv-section"><h3>Yachting Experience</h3>${d.yachting.map(boat).join('')}</div>
+<div class="cv-section"><h3>Land-Based Experience</h3>${d.land_based.map(entry).join('')}</div>
+<div class="cv-section"><h3>Professional References</h3>
+<div class="cv-references">${d.references.map(r=>`<div class="cv-ref"><strong>${esc(r.name)}</strong><p class="cv-ref-role">${esc(r.role)}</p><p class="cv-ref-contact">${esc(emailOnly(r.contact))}</p></div>`).join('')}</div>
+</div></div></div>`;
+}catch(e){root.innerHTML='<p class="gallery-message">CV details could not be loaded. Please check cv.json.</p>';console.error(e);}
+}
 loadFoodGallery();loadHeroImage();loadBio();loadCV();
 </script>
 </body>
 </html>
+
+HTML
