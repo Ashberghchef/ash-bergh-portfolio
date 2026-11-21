@@ -123,5 +123,22 @@
     "image": "/media/images/IMG-20250614-WA0004.jpg",
     "alt": "Spring green vegetables · truffle · burrata",
     "visible": false
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_161754_Gallery.jpg",
+    "alt": "Shortcrust",
+    "visible": false
+  },
+  {
+    "alt": "Shortcrust · chocolate · vanilla · gooseberry",
+    "visible": false
+  },
+  {
+    "image": "/media/images/20250806_204951.jpg",
+    "alt": "Salmon · mango · bottarga",
+    "visible": false
+  },
+  {
+    "visible": false
   }
 ]
