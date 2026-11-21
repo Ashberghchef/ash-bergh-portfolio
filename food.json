@@ -1,236 +1,236 @@
 [
   {
-    "image": "/media/images/file_00000000c278720780a8e30042c344b4-1.png",
+    "image": "media/images/file_00000000c278720780a8e30042c344b4-1.png",
     "alt": "Steak · Truffle · Potato velouté",
     "visible": true
   },
   {
-    "image": "/media/images/20260705_191622-3.jpg",
+    "image": "media/images/20260705_191622-3.jpg",
     "alt": "Fresh scallop · Trout caviar · S/D tomato cream · Mint oil",
     "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_150123_Gallery-1.jpg",
+    "image": "media/images/Screenshot_20261121_150123_Gallery-1.jpg",
     "alt": "Russian honey cake · Medovik",
     "visible": true
   },
   {
-    "image": "/media/images/IMG-20250507-WA0017-1.jpg",
+    "image": "media/images/IMG-20250507-WA0017-1.jpg",
     "alt": "Fine Marinated zucchini · 100% acorn-fed Jamón Ibérico · Parmigiano  ",
     "visible": true
   },
   {
-    "image": "/media/images/file_00000000829871f8aae3f5f145ef58a1-2.png",
+    "image": "media/images/file_00000000829871f8aae3f5f145ef58a1-2.png",
     "alt": "White fish · Miso crème · Salmon caviar · Coriander oil",
     "visible": true
   },
   {
-    "image": "/media/images/20260428_190836-1.jpg",
+    "image": "media/images/20260428_190836-1.jpg",
     "alt": "Savoury shortcrust · Green asparagus and pecorino purée · Roasted white asparagus",
     "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_150715_Gallery-1.jpg",
+    "image": "media/images/Screenshot_20261121_150715_Gallery-1.jpg",
     "alt": "Steak · Pommes purée · Red wine jus",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_153906_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_153906_Gallery.jpg",
     "alt": "Coppa · Mango · Black garlic",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_00000000679471fdb97742bd8a6bd974.png",
+    "image": "media/images/file_00000000679471fdb97742bd8a6bd974.png",
     "alt": "Amarula panna cotta · Gooseberry",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260415-WA0088.jpg",
+    "image": "media/images/IMG-20260415-WA0088.jpg",
     "alt": "Sushi ",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_000000009c8071fbb0c16fb5d6104692.png",
+    "image": "media/images/file_000000009c8071fbb0c16fb5d6104692.png",
     "alt": "Octopus · Romesco",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_155025_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_155025_Gallery.jpg",
     "alt": "Lamb shank · New potatoes · Gravy",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_00000000860c82119e1458c80693fcdb-1.png",
+    "image": "media/images/file_00000000860c82119e1458c80693fcdb-1.png",
     "alt": "Lime Posset ",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_155652_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_155652_Gallery.jpg",
     "alt": "Brioche · Herbed goat’s cheese · Fennel · Marinated pear",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20260417_192648.jpg",
+    "image": "media/images/20260417_192648.jpg",
     "alt": "White fish · Mixed new potatoes · Pea purée",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_160023_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_160023_Gallery.jpg",
     "alt": "Paella",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_160332_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_160332_Gallery.jpg",
     "alt": "Olive oil Citrus Cake",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260401-WA0021.jpg",
+    "image": "media/images/IMG-20260401-WA0021.jpg",
     "alt": "Chilli-lime shrimp · mango · mint",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20260316_193525.jpg",
+    "image": "media/images/20260316_193525.jpg",
     "alt": "Asparagus · prosciutto · burrata",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_00000000c2e071f8abeeca89f9302cce.png",
+    "image": "media/images/file_00000000c2e071f8abeeca89f9302cce.png",
     "alt": "Foie gras pâté · chanterelle · truffle",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261104_202704_Gallery.jpg",
+    "image": "media/images/Screenshot_20261104_202704_Gallery.jpg",
     "alt": "Steak · aubergine · romesco · marinated tomato",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_161334_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_161334_Gallery.jpg",
     "alt": "Passionfruit · coffee ",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260415-WA0064(1) (1)-2.jpg",
+    "image": "media/images/IMG-20260415-WA0064(1) (1)-2.jpg",
     "alt": "Mahi-mahi · sesame · green mango · mint · passionfruit",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20250614-WA0004.jpg",
+    "image": "media/images/IMG-20250614-WA0004.jpg",
     "alt": "Spring green vegetables · truffle · burrata",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_161754_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_161754_Gallery.jpg",
     "alt": "Shortcrust",
-    "visible": false
+    "visible": true
   },
   {
     "alt": "Shortcrust · chocolate · vanilla · gooseberry",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20250806_204951.jpg",
+    "image": "media/images/20250806_204951.jpg",
     "alt": "Salmon · mango · bottarga",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_162252_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_162252_Gallery.jpg",
     "alt": "Welcome snacks",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_162451_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_162451_Gallery.jpg",
     "alt": "Duck liver pâté · seafood salad",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_162504_Gallery-1.jpg",
+    "image": "media/images/Screenshot_20261121_162504_Gallery-1.jpg",
     "alt": "Amarula · peppermint caramel · ginger orange",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_162514_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_162514_Gallery.jpg",
     "alt": "Charcuterie · ceviche",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20240723_142837.jpg",
+    "image": "media/images/20240723_142837.jpg",
     "alt": "Chocolate · pistachio",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20250611_142841.jpg",
+    "image": "media/images/20250611_142841.jpg",
     "alt": "Quinoa · zucchini · goat’s cheese · fig",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_163208_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_163208_Gallery.jpg",
     "alt": "White asparagus · bresaola · burrata · balsamic",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260401-WA0056-1.jpg",
+    "image": "media/images/IMG-20260401-WA0056-1.jpg",
     "alt": "White fish · potatoes · pumpkin · lemon cream",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Screenshot_20261121_163805_Gallery.jpg",
+    "image": "media/images/Screenshot_20261121_163805_Gallery.jpg",
     "alt": "Octopus carpaccio · grape · aioli",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20250927_130112.jpg",
+    "image": "media/images/20250927_130112.jpg",
     "alt": "Burrata · jamón ibérico · grilled peach",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_00000000e03471fd817d011130414cb4.png",
+    "image": "media/images/file_00000000e03471fd817d011130414cb4.png",
     "alt": "Honey cake",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260426-WA0004.jpg",
+    "image": "media/images/IMG-20260426-WA0004.jpg",
     "alt": "Marinated zucchini · goat’s cheese · prosciutto · balsamic pearls",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_000000005fec8211907abe97b795065c.png",
+    "image": "media/images/file_000000005fec8211907abe97b795065c.png",
     "alt": "Lamb shank · mash · gravy",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/file_00000000e14c71fd845c3e4df08d472d-1.png",
+    "image": "media/images/file_00000000e14c71fd845c3e4df08d472d-1.png",
     "alt": "Citrus cheesecake",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/Minimalist Black and White Blank Paper Document_20260223_192743_0000-1.jpg",
+    "image": "media/images/Minimalist Black and White Blank Paper Document_20260223_192743_0000-1.jpg",
     "alt": "Octopus · potato velouté · crispy potato skin",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/20250604_225927.jpg",
+    "image": "media/images/20250604_225927.jpg",
     "alt": "Pistachio Tiramisu ",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260407-WA0015-3.jpg",
+    "image": "media/images/IMG-20260407-WA0015-3.jpg",
     "alt": "Melon · prosciutto · mint jelly",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260407-WA0018.jpg",
+    "image": "media/images/IMG-20260407-WA0018.jpg",
     "alt": "Raspberry · chocolate",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260407-WA0013-1.jpg",
+    "image": "media/images/IMG-20260407-WA0013-1.jpg",
     "alt": "Jamón ibérico · balsamic pearls",
-    "visible": false
+    "visible": true
   },
   {
-    "image": "/media/images/IMG-20260407-WA0016.jpg",
+    "image": "media/images/IMG-20260407-WA0016.jpg",
     "alt": "Smoked salmon · cream cheese · capers",
-    "visible": false
+    "visible": true
   }
 ]
