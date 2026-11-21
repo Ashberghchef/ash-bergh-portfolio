@@ -71,7 +71,7 @@ section{padding:65px 0}
 <body>
 <header><div class="brand">CHEF ASH BERGH</div></header>
 <div class="hero">
-<img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=85" alt="Marina">
+<img id="hero-image" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=85" alt="Ash Bergh">
 <div class="hero-copy">
 <p class="kicker">Private Chef · Yacht Specialist</p>
 <h1>Ash Bergh</h1>
@@ -202,6 +202,22 @@ async function loadFoodGallery() {
     console.error(error);
   }
 }
+// Load the homepage photograph selected in the Pages CMS homepage settings.
+async function loadHeroImage() {
+  try {
+    const response = await fetch(new URL('site.json', document.baseURI), {cache: 'no-store'});
+    if (!response.ok) throw new Error('Could not load site.json: ' + response.status);
+    const site = await response.json();
+    if (site.hero_image) {
+      const cleanImagePath = site.hero_image.replace(/^\/+/, '');
+      document.getElementById('hero-image').src = new URL(cleanImagePath, document.baseURI).href;
+    }
+  } catch (error) {
+    console.error('Homepage photograph could not be loaded:', error);
+  }
+}
+loadHeroImage();
+
 loadFoodGallery();
 </script>
 </body>
