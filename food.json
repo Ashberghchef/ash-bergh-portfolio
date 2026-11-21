@@ -78,5 +78,13 @@
     "image": "/media/images/Screenshot_20261121_160023_Gallery.jpg",
     "alt": "Paella",
     "visible": false
+  },
+  {
+    "image": "/media/images/Screenshot_20261121_160332_Gallery.jpg",
+    "alt": "Olive oil Citrus Cake",
+    "visible": false
+  },
+  {
+    "visible": false
   }
 ]
