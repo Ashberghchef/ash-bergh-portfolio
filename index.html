@@ -34,7 +34,7 @@ section[hidden]{display:none!important}
 .gallery figure{margin:0;overflow:hidden;background:#151515}
 .gallery img{display:block;width:100%;height:clamp(240px,36vw,440px);object-fit:cover;transition:transform .7s}
 .gallery figure:hover img{transform:scale(1.025)}
-figcaption{padding:10px 2px 0;color:#aaa49a;letter-spacing:.06em;font-size:10px;font-weight:300;line-height:1.5}
+.gallery figcaption{padding:8px 2px 0;color:#aaa49a;letter-spacing:.035em;font-size:10px;font-weight:300;line-height:1.5;text-transform:none}
 .gallery-message{color:var(--muted);font-size:12px;letter-spacing:.08em}
 .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .video-card{position:relative;min-height:260px;aspect-ratio:16/10;background:#171717;overflow:hidden}
@@ -163,14 +163,16 @@ links.forEach(link => {
   });
 });
 
-// Load actual uploaded food photographs from food.json.
+// Load every visible food entry from food.json.
+// Resolve image paths from the GitHub Pages project folder.
 async function loadFoodGallery() {
   const gallery = document.getElementById('food-gallery');
   try {
-    const response = await fetch('./food.json', {cache: 'no-store'});
-    if (!response.ok) throw new Error('Could not load food.json');
+    const response = await fetch(new URL('food.json', document.baseURI), {cache: 'no-store'});
+    if (!response.ok) throw new Error('Could not load food.json: ' + response.status);
     const dishes = await response.json();
-    const visibleDishes = dishes.filter(dish => dish.visible === true && dish.image);
+    const visibleDishes = dishes.filter(dish => dish.visible === true && dish.image && dish.image.trim());
+
     gallery.replaceChildren();
 
     if (visibleDishes.length === 0) {
@@ -182,10 +184,15 @@ async function loadFoodGallery() {
       const figure = document.createElement('figure');
       const img = document.createElement('img');
       const caption = document.createElement('figcaption');
-      img.src = dish.image;
+
+      const cleanImagePath = dish.image.replace(/^\/+/, '');
+      img.src = new URL(cleanImagePath, document.baseURI).href;
       img.alt = dish.alt || 'Food photograph';
       img.loading = 'lazy';
+
       caption.textContent = dish.alt || '';
+      if (!caption.textContent.trim()) caption.hidden = true;
+
       figure.appendChild(img);
       figure.appendChild(caption);
       gallery.appendChild(figure);
