@@ -70,6 +70,13 @@ section[hidden]{display:none!important}
 .cv-ref strong{display:block;font:400 21px "Cormorant Garamond",Georgia,serif;color:#eeeae2;margin:0 0 5px}
 .cv-ref .cv-ref-role{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 13px}
 .cv-ref .cv-ref-contact{font-size:10px;line-height:1.7;color:#c9c3b8;overflow-wrap:anywhere;margin:0;padding-top:11px;border-top:1px solid rgba(198,173,112,.22)}
+.cv-reference-letter{margin-top:24px;padding:28px 30px;background:#151716;border:1px solid rgba(198,173,112,.32);color:#d8d4cc;font-size:11px;line-height:1.9}
+.cv-reference-letter .letter-date{font-size:9px;letter-spacing:.12em;color:#aaa49a;margin:0 0 22px}
+.cv-reference-letter .letter-greeting{margin:0 0 18px}
+.cv-reference-letter p{margin:0 0 15px}
+.cv-reference-letter .letter-signoff{margin:24px 0 0}
+.cv-reference-letter .letter-name{display:block;font:400 25px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin-top:3px}
+.cv-reference-letter .letter-role{display:block;font-size:9px;letter-spacing:.1em;color:#aaa49a;margin-top:2px}
 footer{text-align:center;padding:38px 20px 50px;border-top:1px solid #282722;color:#8e887e;font-size:9px;letter-spacing:.35em}
 @media(max-width:700px){
 header{height:64px;padding:10px 20px}
@@ -371,6 +378,17 @@ root.innerHTML=`<div class="cv-layout">
 <div class="cv-section"><h3>Land-Based Experience</h3>${d.land_based.map(entry).join('')}</div>
 <div class="cv-section"><h3>Professional References</h3>
 <div class="cv-references">${d.references.map(r=>`<div class="cv-ref"><strong>${esc(r.name)}</strong><p class="cv-ref-role">${esc(r.role)}</p><p class="cv-ref-contact">${esc(emailOnly(r.contact))}</p></div>`).join('')}</div>
+<div class="cv-reference-letter">
+<p class="letter-date">8 MARCH 2025</p>
+<p class="letter-greeting">To whom it may concern,</p>
+<p>Ms Ashleigh Bergh held the position of stewardess/chef aboard our sailing yacht for the 2024 sailing season.</p>
+<p>She provided support for up to 7 guests and 3 crew. Her responsibilities included provisioning, preparing and serving meals, and keeping the interior of the yacht clean and tidy.</p>
+<p>She was at all times professional, friendly, reliable and trustworthy.</p>
+<p>Her meals were innovative, prepared with great care and attention to the individual guest preferences.</p>
+<p>She was prudent with her provisioning, and managed to stay within her budget.</p>
+<p>In my opinion, her services ranked at the top of her class. I highly recommend her for a similar position.</p>
+<p class="letter-signoff">Sincerely,<span class="letter-name">John Schwarz</span><span class="letter-role">Owner, Primadonna, Mylius 80</span></p>
+</div>
 </div></div></div>`;
 }catch(e){
 root.innerHTML='<p class="gallery-message">CV details could not be loaded. Please check cv.json.</p>';
