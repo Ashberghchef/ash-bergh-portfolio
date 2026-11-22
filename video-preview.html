@@ -1,1 +1,72 @@
 
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Preview Gallery | Ash Bergh</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080909;color:#eeeae2;font-family:Arial,sans-serif;padding:25px}
+h1{font-family:Georgia,serif;font-weight:normal;color:#c6ad70}
+.intro{color:#aaa49a;font-size:14px;line-height:1.6;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+.card{background:#151716;border:1px solid #39352b;padding:10px}
+.card video{width:100%;aspect-ratio:4/5;object-fit:contain;background:#000;display:block}
+.number{color:#c6ad70;font-size:12px;letter-spacing:2px;margin:12px 0 7px}
+.filename{font-size:12px;color:#eeeae2;overflow-wrap:anywhere;line-height:1.5}
+button{background:#c6ad70;border:0;padding:9px 13px;margin-top:10px;color:#080909;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<h1>Video Preview Gallery</h1>
+<p class="intro">Your private video organiser. Play each clip to identify it, then use its filename to rearrange the Videos list in Pages CMS. Only one preview plays at a time.</p>
+<div class="grid" id="gallery">Loading videos...</div>
+
+<script>
+async function load(){
+const response=await fetch('videos.json',{cache:'no-store'});
+if(!response.ok)throw Error('Could not load videos.json');
+const videos=await response.json();
+const gallery=document.getElementById('gallery');
+gallery.replaceChildren();
+
+videos.forEach((item,index)=>{
+if(!item.video_url)return;
+
+const card=document.createElement('div');
+card.className='card';
+
+const video=document.createElement('video');
+video.src=item.video_url;
+video.preload='metadata';
+video.playsInline=true;
+video.controls=true;
+video.muted=true;
+
+video.addEventListener('play',()=>{
+document.querySelectorAll('video').forEach(other=>{
+if(other!==video)other.pause();
+});
+});
+
+const number=document.createElement('div');
+number.className='number';
+number.textContent='VIDEO '+String(index+1).padStart(2,'0');
+
+const filename=document.createElement('div');
+filename.className='filename';
+filename.textContent=item.video_url.split('/').pop();
+
+card.append(video,number,filename);
+gallery.append(card);
+});
+}
+
+load().catch(error=>{
+document.getElementById('gallery').textContent=error.message;
+});
+</script>
+</body>
+</html>
