@@ -51,6 +51,28 @@ content:
           media: documents
           extensions: [pdf]
 
+  - name: cv_photos
+    label: CV Boat Photographs
+    type: file
+    path: cv.json
+    format: json
+    fields:
+      - name: moonshadow_image
+        label: Moonshadow photograph
+        type: image
+        options:
+          media: images
+      - name: diam_image
+        label: Diam photograph
+        type: image
+        options:
+          media: images
+      - name: primadonna_image
+        label: Primadonna photograph
+        type: image
+        options:
+          media: images
+
   - name: food
     label: Food photographs
     type: file
