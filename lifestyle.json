@@ -1,296 +1,38 @@
 [
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_150123_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_150123_Gallery-1.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_150715_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_150715_Gallery-1.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_153906_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_155025_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_155652_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_160023_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_160332_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_161334_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_161754_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_162252_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_162451_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_162504_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_162504_Gallery-1.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_162514_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_163208_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "image",
-"src": "media/images/Screenshot_20261121_163805_Gallery.jpg",
-"title": "Lifestyle",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260613_202245.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260622_184036.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260622_200323.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260623_200438.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260623_203015.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260625_083703.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260626_201412.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260627_195203.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260629_140737.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260630_185733.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260630_195417.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260702_191747.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260702_195747.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260702_202401.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260704_093052.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260705_203052.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260724_144816.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260725_134018.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260727_093728.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260816_140405.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "media/videos/20260817_135050.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20240604_122841.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260623_190607.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260626_194725.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260629_140737.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260705_171252.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260705_203052.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260724_144816.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260816_135658.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260817_135050.mp4",
-"title": "Lifestyle video",
-"visible": true
-},
-{
-"type": "video",
-"src": "20260908_100314.mp4",
-"title": "Lifestyle video",
-"visible": true
-}
+{"type":"image","src":"media/images/20240422_125227.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240423_123715.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240513_203439.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240513_233521.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240903_191752.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240906_153657.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20240908_133344.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20241003_134647.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20250520_172235.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20250531_162728.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20250602_150234.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20260320_192044.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20250512-WA0028(1).jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/20260613_190545.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20250503-WA0000.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20260320-WA0003.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20260329-WA0001.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20260602-WA0017(1).jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20260617-WA0006.jpg","title":"Lifestyle","visible":true},
+{"type":"image","src":"media/images/IMG-20260617-WA0017.jpg","title":"Lifestyle","visible":true},
+{"type":"video","src":"20240604_122841.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240909_200856.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240423_123720.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240629_171221.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240719_171653.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240814_173458_1_1.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240918_133322.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240918_151054.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240924_111637.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240924_112208.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20240926_153042.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20250519_142258.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20250520_170034.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20250520_170359.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/20260629_184927.mp4","title":"Lifestyle video","visible":true},
+{"type":"video","src":"media/images/VID-20250816-WA0042.mp4","title":"Lifestyle video","visible":true}
 ]
