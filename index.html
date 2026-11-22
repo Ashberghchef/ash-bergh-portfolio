@@ -211,7 +211,10 @@ if(id!=='videos')pauseAllVideos();
 if(id!=='behind')pauseAllLifestyleVideos();
 links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
 history.replaceState(null,'','#'+id);
-window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+const target=document.getElementById(id);
+const nav=document.querySelector('nav');
+const targetTop=target.getBoundingClientRect().top+window.scrollY-nav.offsetHeight;
+window.scrollTo({top:Math.max(0,targetTop),behavior:'instant'});
 requestAnimationFrame(()=>requestAnimationFrame(()=>{
 if(id==='videos')updateSelectedVideo();
 if(id==='behind')updateSelectedLifestyleVideo();
