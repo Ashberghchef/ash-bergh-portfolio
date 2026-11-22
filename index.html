@@ -109,8 +109,6 @@ if(location.hash)history.replaceState(null,'',location.pathname+location.search)
 
 let activeVideo=null;
 let selectedVideo=null;
-let videoObserver=null;
-const visibilityRatios=new Map();
 
 function pauseAllVideos(){
 document.querySelectorAll('#video-grid video').forEach(v=>v.pause());
@@ -155,7 +153,7 @@ if(id!=='videos')pauseAllVideos();
 links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
 history.replaceState(null,'','#'+id);
 window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
-if(id==='videos')requestAnimationFrame(updateSelectedVideo);
+if(id==='videos')requestAnimationFrame(()=>requestAnimationFrame(updateSelectedVideo));
 }
 
 links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPanel(a.getAttribute('href').slice(1));}));
@@ -190,18 +188,33 @@ console.error(e);
 function updateSelectedVideo(){
 if(document.getElementById('videos').hidden){pauseAllVideos();return;}
 const videos=[...document.querySelectorAll('#video-grid video')];
-const candidate=videos.filter(video=>(visibilityRatios.get(video)||0)>=0.85)
-.sort((a,b)=>(visibilityRatios.get(b)||0)-(visibilityRatios.get(a)||0))[0];
-if(candidate){if(candidate!==selectedVideo)selectVideo(candidate);else tryPlaySelected(candidate);}
-else{pauseAllVideos();}
+const viewportHeight=window.innerHeight||document.documentElement.clientHeight;
+let candidate=null;
+let bestRatio=0;
+
+/* Calculate visibility directly on every scroll. This also works when the
+   Videos panel has just changed from hidden to visible on mobile browsers. */
+videos.forEach(video=>{
+const rect=video.getBoundingClientRect();
+const visibleHeight=Math.max(0,Math.min(rect.bottom,viewportHeight)-Math.max(rect.top,0));
+const ratio=rect.height>0?visibleHeight/rect.height:0;
+if(ratio>=0.85&&ratio>bestRatio){candidate=video;bestRatio=ratio;}
+});
+
+if(candidate){
+if(candidate!==selectedVideo)selectVideo(candidate);
+else tryPlaySelected(candidate);
+}else if(selectedVideo){pauseAllVideos();}
 }
+
+window.addEventListener('scroll',updateSelectedVideo,{passive:true});
+window.addEventListener('resize',updateSelectedVideo,{passive:true});
 
 async function loadVideos(){
 const grid=document.getElementById('video-grid');
 try{
 const items=await loadJSON('videos.json');
 grid.replaceChildren();
-visibilityRatios.clear();
 items.filter(v=>v.visible===true&&v.video_url&&v.video_url.trim()).forEach(item=>{
 const card=document.createElement('div');
 card.className='video-card';
@@ -248,12 +261,8 @@ grid.append(card);
 video.load();
 });
 
-if(videoObserver)videoObserver.disconnect();
-videoObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{visibilityRatios.set(entry.target,entry.isIntersecting?entry.intersectionRatio:0);});
-updateSelectedVideo();
-},{threshold:[0,0.85]});
-grid.querySelectorAll('video').forEach(video=>videoObserver.observe(video));
+/* Recalculate after the cards have been laid out and the panel is visible. */
+requestAnimationFrame(()=>requestAnimationFrame(updateSelectedVideo));
 }catch(e){
 grid.innerHTML='<p class="gallery-message">Videos could not be loaded. Please check videos.json.</p>';
 console.error(e);
