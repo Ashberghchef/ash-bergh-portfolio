@@ -158,6 +158,7 @@ const grid=document.getElementById('video-grid');
 try{
 const items=await loadJSON('videos.json');
 grid.replaceChildren();
+
 items.filter(v=>v.visible===true&&v.video_url&&v.video_url.trim()).forEach(item=>{
 const card=document.createElement('div');
 card.className='video-card';
@@ -168,7 +169,7 @@ video.defaultMuted=true;
 video.volume=0;
 video.loop=true;
 video.playsInline=true;
-video.preload='none';
+video.preload='metadata';
 video.controls=false;
 video.autoplay=false;
 video.setAttribute('muted','');
@@ -185,6 +186,23 @@ source.src=new URL(item.video_url.replace(/^\/+/,''),document.baseURI).href;
 source.type='video/mp4';
 video.append(source);
 
+/* Load a still frame for each video without autoplaying it. */
+video.addEventListener('loadedmetadata',()=>{
+if(!item.thumbnail&&video.duration>0){
+try{
+video.currentTime=Math.min(0.1,video.duration/10);
+}catch(e){}
+}
+});
+
+video.addEventListener('loadeddata',()=>{
+if(video!==activeVideo)video.pause();
+});
+
+video.addEventListener('seeked',()=>{
+if(video!==activeVideo)video.pause();
+});
+
 video.addEventListener('volumechange',()=>{
 if(!video.muted||video.volume!==0){
 video.muted=true;
@@ -199,6 +217,9 @@ label.textContent=item.title||'';
 
 card.append(video,label);
 grid.append(card);
+
+/* Ask the browser to fetch the first frame, but do not start playback. */
+video.load();
 });
 
 if(videoObserver)videoObserver.disconnect();
