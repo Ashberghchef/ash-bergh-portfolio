@@ -10,7 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--black:#080909;--panel:#111313;--gold:#c6ad70;--white:#eeeae2;--muted:#aaa49a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--black);color:var(--white);font-family:Montserrat,Arial,sans-serif;font-weight:300}
 header{height:76px;background:#080909;display:flex;align-items:center;padding:12px clamp(24px,8vw,110px);border-bottom:1px solid #252522}
 .brand{color:var(--gold);letter-spacing:.24em;font-size:clamp(16px,2.4vw,23px);font-weight:500;white-space:nowrap}
@@ -25,31 +26,35 @@ nav{height:70px;position:sticky;top:0;z-index:5;background:rgba(8,9,9,.97);backd
 nav a{color:#c2bbae;text-decoration:none;font-size:clamp(9px,.85vw,11px);font-weight:500;letter-spacing:.16em;white-space:nowrap;text-align:center;padding:12px clamp(9px,1.4vw,17px);border:1px solid rgba(198,173,112,.24);border-radius:3px;background:rgba(255,255,255,.015)}
 nav a.active,nav a:hover{color:var(--gold);border-color:rgba(198,173,112,.82);background:rgba(198,173,112,.1)}
 main{max-width:1250px;margin:auto;padding:0 clamp(22px,8.3vw,105px)}
-section{padding:65px 0 95px;scroll-margin-top:76px}section[hidden]{display:none!important}
+section{padding:65px 0 95px;scroll-margin-top:76px}
+section[hidden]{display:none!important}
 .section-title{font:300 42px "Cormorant Garamond",Georgia,serif;letter-spacing:.13em;margin:0 0 34px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}.gallery figure{margin:0;overflow:hidden;background:#151515}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px}
+.gallery figure{margin:0;overflow:hidden;background:#151515}
 .gallery img{display:block;width:100%;height:clamp(240px,36vw,440px);object-fit:cover}
 .gallery figcaption{padding:8px 2px 0;color:#aaa49a;font-size:10px;line-height:1.5}
 .gallery-message{color:var(--muted);font-size:12px}
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.lifestyle-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.lifestyle-item{margin:0;background:#151515;overflow:hidden}
-.lifestyle-item img,.lifestyle-item video{display:block;width:100%;height:clamp(220px,34vw,420px);object-fit:cover;background:#171717}
-.lifestyle-item figcaption{padding:8px 10px;color:#aaa49a;font-size:9px;overflow-wrap:anywhere}
-.video-card{position:relative;aspect-ratio:4/5;background:#171717;overflow:hidden}
-.video-card video{display:block;width:100%;height:100%;object-fit:cover;background:#171717}
+.video-grid,.lifestyle-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.video-card,.lifestyle-item{position:relative;aspect-ratio:4/5;background:#171717;overflow:hidden;margin:0}
+.video-card video,.lifestyle-item video,.lifestyle-item img{display:block;width:100%;height:100%;object-fit:cover;background:#171717}
 .video-label{position:absolute;bottom:20px;left:22px;color:white;letter-spacing:.25em;font-size:10px;text-shadow:0 1px 8px #000;pointer-events:none}
-.bts-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}.bts-grid img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.bts-grid .stack{display:grid;gap:24px}.bts-grid .stack img{height:calc(50% - 12px);min-height:138px}
+.bts-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+.bts-grid img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.bts-grid .stack{display:grid;gap:24px}
+.bts-grid .stack img{height:calc(50% - 12px);min-height:138px}
 .bio-copy{max-width:850px;color:#d0cbc1;font-size:13px;line-height:1.95;white-space:pre-line}
 .cv-intro{margin:0 0 32px;padding:25px 28px;background:#111313;border-left:2px solid var(--gold);color:#d0cbc1;font-size:12px;line-height:1.95}
-.cv-intro p{margin:0 0 13px}.cv-intro p:last-child{margin-bottom:0}
+.cv-intro p{margin:0 0 13px}
+.cv-intro p:last-child{margin-bottom:0}
 .cv-intro h3{font:300 25px "Cormorant Garamond",Georgia,serif;letter-spacing:.12em;color:var(--gold);margin:0 0 15px}
 .cv-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:38px;border:1px solid rgba(198,173,112,.25);background:#0d0f0f}
 .cv-sidebar{background:#171817;padding:30px 24px;color:#eae5dc}
-.cv-side-group{padding:0 0 21px}.cv-side-group h3{font:400 21px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 0 10px}
+.cv-side-group{padding:0 0 21px}
+.cv-side-group h3{font:400 21px "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 0 10px}
 .cv-side-group p{font-size:10px;line-height:1.8;color:#d0cbc1;margin:0 0 4px;overflow-wrap:anywhere}
-.cv-main{padding:32px 32px 38px 0}.cv-section{margin:0 0 30px}.cv-section h3{display:flex;align-items:center;gap:13px;font:300 29px "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;margin:0 0 16px}
+.cv-main{padding:32px 32px 38px 0}
+.cv-section{margin:0 0 30px}
+.cv-section h3{display:flex;align-items:center;gap:13px;font:300 29px "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;margin:0 0 16px}
 .cv-section h3:after{content:"";height:1px;background:rgba(198,173,112,.55);flex:1}
 .cv-entry{display:grid;grid-template-columns:112px minmax(0,1fr);gap:15px;margin:0 0 22px;align-items:start}
 .cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}
@@ -66,16 +71,33 @@ section{padding:65px 0 95px;scroll-margin-top:76px}section[hidden]{display:none!
 .cv-ref .cv-ref-contact{font-size:10px;line-height:1.7;color:#c9c3b8;overflow-wrap:anywhere;margin:0;padding-top:11px;border-top:1px solid rgba(198,173,112,.22)}
 footer{text-align:center;padding:38px 20px 50px;border-top:1px solid #282722;color:#8e887e;font-size:9px;letter-spacing:.35em}
 @media(max-width:700px){
-header{height:64px;padding:10px 20px}.brand{font-size:17px;letter-spacing:.2em}
-.hero{height:calc(100svh - 122px);min-height:390px}.hero-copy{padding-bottom:58px}.hero-copy .kicker{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px)}
-nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
-.gallery,.video-grid,.lifestyle-grid{grid-template-columns:1fr;gap:28px}.gallery img{height:340px}section{padding:55px 0}
-.bts-grid{grid-template-columns:1fr}.bts-grid img{min-height:280px}.bts-grid .stack{grid-template-columns:1fr 1fr}.bts-grid .stack img{height:210px;min-height:0}
-.cv-layout{grid-template-columns:1fr;gap:0}.cv-sidebar{padding:25px 22px}.cv-main{padding:28px 22px 34px}
-.cv-entry{grid-template-columns:88px minmax(0,1fr);gap:12px}.cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}.cv-boat-frame{width:88px;height:68px}
-.cv-entry h4{font-size:11px}.cv-date{font-size:9px}.cv-section h3{font-size:26px}
-.cv-intro{padding:20px 18px;font-size:11px}.cv-intro h3{font-size:23px}
-.cv-references{grid-template-columns:1fr;gap:12px}.cv-ref{padding:17px}
+header{height:64px;padding:10px 20px}
+.brand{font-size:17px;letter-spacing:.2em}
+.hero{height:calc(100svh - 122px);min-height:390px}
+.hero-copy{padding-bottom:58px}
+.hero-copy .kicker{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px)}
+nav{height:58px;gap:5px;padding:9px 10px}
+nav a{font-size:clamp(8px,2.5vw,10px);letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
+.gallery,.video-grid,.lifestyle-grid{grid-template-columns:1fr;gap:28px}
+.gallery img{height:340px}
+section{padding:55px 0}
+.bts-grid{grid-template-columns:1fr}
+.bts-grid img{min-height:280px}
+.bts-grid .stack{grid-template-columns:1fr 1fr}
+.bts-grid .stack img{height:210px;min-height:0}
+.cv-layout{grid-template-columns:1fr;gap:0}
+.cv-sidebar{padding:25px 22px}
+.cv-main{padding:28px 22px 34px}
+.cv-entry{grid-template-columns:88px minmax(0,1fr);gap:12px}
+.cv-entry.no-photo{grid-template-columns:minmax(0,1fr)}
+.cv-boat-frame{width:88px;height:68px}
+.cv-entry h4{font-size:11px}
+.cv-date{font-size:9px}
+.cv-section h3{font-size:26px}
+.cv-intro{padding:20px 18px;font-size:11px}
+.cv-intro h3{font-size:23px}
+.cv-references{grid-template-columns:1fr;gap:12px}
+.cv-ref{padding:17px}
 }
 </style>
 </head>
@@ -83,10 +105,15 @@ nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);l
 <header><div class="brand">CHEF ASH BERGH</div></header>
 <div class="hero">
 <img id="hero-image" src="media/images/file_000000001680820b8695dfe57b372632.png" alt="Ash Bergh">
-<div class="hero-copy"><p class="kicker">Private Chef · Yacht Specialist</p><h1>Ash Bergh</h1>
-<p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p></div>
+<div class="hero-copy">
+<p class="kicker">Private Chef · Yacht Specialist</p>
+<h1>Ash Bergh</h1>
+<p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p>
 </div>
-<nav aria-label="Portfolio navigation"><a href="#food">FOOD</a><a href="#videos">VIDEOS</a><a href="#behind">LIFESTYLE</a><a href="#cv">CV</a><a href="#bio">BIO</a></nav>
+</div>
+<nav aria-label="Portfolio navigation">
+<a href="#food">FOOD</a><a href="#videos">VIDEOS</a><a href="#behind">LIFESTYLE</a><a href="#cv">CV</a><a href="#bio">BIO</a>
+</nav>
 <main>
 <section id="food" hidden><h2 class="section-title">Food</h2><div class="gallery" id="food-gallery"><p class="gallery-message">Loading food photographs...</p></div></section>
 <section id="videos" hidden><h2 class="section-title">Videos</h2><div class="video-grid" id="video-grid"><p class="gallery-message">Loading videos...</p></div></section>
@@ -105,59 +132,24 @@ nav{height:58px;gap:5px;padding:9px 10px}nav a{font-size:clamp(8px,2.5vw,10px);l
 </main>
 <footer>CHEF ASH BERGH · AVAILABLE FOR CHARTER ENQUIRIES</footer>
 <script>
-const links=[...document.querySelectorAll('nav a')],sections=links.map(a=>document.querySelector(a.getAttribute('href')));
-sections.forEach(s=>{if(s)s.hidden=true});links.forEach(a=>a.classList.remove('active'));
+const links=[...document.querySelectorAll('nav a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+sections.forEach(s=>{if(s)s.hidden=true});
+links.forEach(a=>a.classList.remove('active'));
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 
-let activeVideo=null;
 let selectedVideo=null;
+let selectedLifestyleVideo=null;
 
 function pauseAllVideos(){
 document.querySelectorAll('#video-grid video').forEach(v=>v.pause());
-activeVideo=null;
 selectedVideo=null;
 }
 
-function tryPlaySelected(video){
-if(!video||video!==selectedVideo||document.getElementById('videos').hidden)return;
-if(video.readyState<2)return;
-video.muted=true;
-video.defaultMuted=true;
-video.volume=0;
-const attempt=video.play();
-if(attempt&&attempt.then){
-attempt.then(()=>{if(video===selectedVideo)activeVideo=video;else video.pause();}).catch(error=>{
-console.warn('Video playback attempt failed:',error);
-});
-}else{activeVideo=video;}
+function pauseAllLifestyleVideos(){
+document.querySelectorAll('#lifestyle-gallery video').forEach(v=>v.pause());
+selectedLifestyleVideo=null;
 }
-
-function selectVideo(video){
-if(!video)return;
-selectedVideo=video;
-const videos=[...document.querySelectorAll('#video-grid video')];
-videos.forEach(v=>{if(v!==video)v.pause();});
-activeVideo=null;
-video.muted=true;
-video.defaultMuted=true;
-video.volume=0;
-video.preload='auto';
-try{
-if(video.readyState<2)video.load();
-}catch(e){console.warn('Could not load selected video:',e);}
-tryPlaySelected(video);
-}
-
-function showPanel(id){
-sections.forEach(s=>{if(s)s.hidden=s.id!==id});
-if(id!=='videos')pauseAllVideos();
-links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
-history.replaceState(null,'','#'+id);
-window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
-if(id==='videos')requestAnimationFrame(()=>requestAnimationFrame(updateSelectedVideo));
-}
-
-links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPanel(a.getAttribute('href').slice(1));}));
 
 async function loadJSON(file){
 const r=await fetch(new URL(file,document.baseURI),{cache:'no-store'});
@@ -165,27 +157,111 @@ if(!r.ok)throw Error(file+' '+r.status);
 return r.json();
 }
 
+function playMuted(video){
+video.muted=true;
+video.defaultMuted=true;
+video.volume=0;
+const p=video.play();
+if(p&&p.catch)p.catch(e=>console.warn('Autoplay blocked:',e));
+}
+
+function chooseVisibleVideo(selector,sectionId,current,setCurrent){
+if(document.getElementById(sectionId).hidden){
+document.querySelectorAll(selector).forEach(v=>v.pause());
+setCurrent(null);
+return;
+}
+const videos=[...document.querySelectorAll(selector)];
+const vh=window.innerHeight||document.documentElement.clientHeight;
+let best=null,bestRatio=0,currentRatio=0;
+videos.forEach(v=>{
+const r=v.getBoundingClientRect();
+const visible=Math.max(0,Math.min(r.bottom,vh)-Math.max(r.top,0));
+const ratio=r.height?visible/r.height:0;
+if(v===current)currentRatio=ratio;
+if(ratio>bestRatio){best=v;bestRatio=ratio;}
+});
+if(current&&currentRatio>=0.2&&bestRatio<0.5){
+playMuted(current);
+return;
+}
+if(best&&bestRatio>=0.2){
+if(best!==current){
+videos.forEach(v=>{if(v!==best)v.pause();});
+setCurrent(best);
+}
+playMuted(best);
+}else{
+videos.forEach(v=>v.pause());
+setCurrent(null);
+}
+}
+
+function updateSelectedVideo(){
+chooseVisibleVideo('#video-grid video','videos',selectedVideo,v=>selectedVideo=v);
+}
+function updateSelectedLifestyleVideo(){
+chooseVisibleVideo('#lifestyle-gallery video','behind',selectedLifestyleVideo,v=>selectedLifestyleVideo=v);
+}
+
+function showPanel(id){
+sections.forEach(s=>{if(s)s.hidden=s.id!==id});
+if(id!=='videos')pauseAllVideos();
+if(id!=='behind')pauseAllLifestyleVideos();
+links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+history.replaceState(null,'','#'+id);
+window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+if(id==='videos')updateSelectedVideo();
+if(id==='behind')updateSelectedLifestyleVideo();
+}));
+}
+links.forEach(a=>a.addEventListener('click',e=>{
+e.preventDefault();
+showPanel(a.getAttribute('href').slice(1));
+}));
+
 async function loadLifestyleGallery(){
 const g=document.getElementById('lifestyle-gallery');
 try{
 const items=await loadJSON('lifestyle.json');
 g.replaceChildren();
 items.filter(item=>item.visible===true&&item.src).forEach(item=>{
-const f=document.createElement('figure');f.className='lifestyle-item';
+const f=document.createElement('figure');
+f.className='lifestyle-item';
 if(item.type==='video'){
 const v=document.createElement('video');
 v.src=new URL(item.src.replace(/^\/+/,''),document.baseURI).href;
-v.controls=true;v.playsInline=true;v.preload='metadata';
+v.muted=true;
+v.defaultMuted=true;
+v.volume=0;
+v.loop=true;
+v.playsInline=true;
+v.preload='metadata';
+v.controls=false;
+v.autoplay=false;
+v.setAttribute('muted','');
+v.setAttribute('playsinline','');
+v.setAttribute('disablepictureinpicture','');
+v.setAttribute('controlslist','nodownload noplaybackrate noremoteplayback');
+v.addEventListener('loadeddata',()=>{if(v!==selectedLifestyleVideo)v.pause();});
+v.addEventListener('volumechange',()=>{
+if(!v.muted||v.volume!==0){v.muted=true;v.defaultMuted=true;v.volume=0;}
+});
 f.append(v);
 }else{
 const i=document.createElement('img');
 i.src=new URL(item.src.replace(/^\/+/,''),document.baseURI).href;
-i.alt=item.alt||item.title||'Lifestyle photograph';i.loading='lazy';
+i.alt=item.alt||'Lifestyle photograph';
+i.loading='lazy';
 f.append(i);
 }
-const c=document.createElement('figcaption');c.textContent=item.title||'';f.append(c);g.append(f);
+g.append(f);
 });
-}catch(e){g.innerHTML='<p class="gallery-message">Lifestyle media could not be loaded.</p>';console.error(e);}
+}catch(e){
+g.innerHTML='<p class="gallery-message">Lifestyle media could not be loaded.</p>';
+console.error(e);
+}
 }
 
 async function loadFoodGallery(){
@@ -194,7 +270,9 @@ try{
 const dishes=await loadJSON('food.json');
 g.replaceChildren();
 dishes.filter(d=>d.visible===true&&d.image&&d.image.trim()).forEach(d=>{
-const f=document.createElement('figure'),i=document.createElement('img'),c=document.createElement('figcaption');
+const f=document.createElement('figure');
+const i=document.createElement('img');
+const c=document.createElement('figcaption');
 i.src=new URL(d.image.replace(/^\/+/,''),document.baseURI).href;
 i.alt=d.alt||'Food photograph';
 i.loading='lazy';
@@ -209,48 +287,14 @@ console.error(e);
 }
 }
 
-function updateSelectedVideo(){
-if(document.getElementById('videos').hidden){pauseAllVideos();return;}
-const videos=[...document.querySelectorAll('#video-grid video')];
-const viewportHeight=window.innerHeight||document.documentElement.clientHeight;
-let candidate=null;
-let bestRatio=0;
-let currentRatio=0;
-
-videos.forEach(video=>{
-const rect=video.getBoundingClientRect();
-const visibleHeight=Math.max(0,Math.min(rect.bottom,viewportHeight)-Math.max(rect.top,0));
-const ratio=rect.height>0?visibleHeight/rect.height:0;
-if(video===selectedVideo)currentRatio=ratio;
-if(ratio>bestRatio){candidate=video;bestRatio=ratio;}
-});
-
-if(selectedVideo&&currentRatio>=0.2&&bestRatio<0.5){
-tryPlaySelected(selectedVideo);
-return;
-}
-
-if(candidate&&bestRatio>=0.2){
-if(candidate!==selectedVideo)selectVideo(candidate);
-else tryPlaySelected(candidate);
-}else{
-pauseAllVideos();
-}
-}
-
-window.addEventListener('scroll',updateSelectedVideo,{passive:true});
-window.addEventListener('resize',updateSelectedVideo,{passive:true});
-
 async function loadVideos(){
 const grid=document.getElementById('video-grid');
 try{
 const items=await loadJSON('videos.json');
 grid.replaceChildren();
-
 items.filter(v=>v.visible===true&&v.video_url&&v.video_url.trim()).forEach(item=>{
 const card=document.createElement('div');
 card.className='video-card';
-
 const video=document.createElement('video');
 video.muted=true;
 video.defaultMuted=true;
@@ -264,59 +308,21 @@ video.setAttribute('muted','');
 video.setAttribute('playsinline','');
 video.setAttribute('disablepictureinpicture','');
 video.setAttribute('controlslist','nodownload noplaybackrate noremoteplayback');
-
-if(item.thumbnail){
-video.poster=new URL(item.thumbnail.replace(/^\/+/,''),document.baseURI).href;
-}
-
+if(item.thumbnail)video.poster=new URL(item.thumbnail.replace(/^\/+/,''),document.baseURI).href;
 const source=document.createElement('source');
 source.src=new URL(item.video_url.replace(/^\/+/,''),document.baseURI).href;
 source.type='video/mp4';
 video.append(source);
-
-video.addEventListener('loadedmetadata',()=>{
-if(video===selectedVideo)tryPlaySelected(video);
-});
-
-video.addEventListener('loadeddata',()=>{
-if(video!==selectedVideo)video.pause();
-else tryPlaySelected(video);
-});
-
-video.addEventListener('canplay',()=>{
-if(video===selectedVideo)tryPlaySelected(video);
-});
-
-video.addEventListener('playing',()=>{
-if(video!==selectedVideo){video.pause();return;}
-activeVideo=video;
-});
-
-video.addEventListener('seeked',()=>{
-if(video!==selectedVideo)video.pause();
-else tryPlaySelected(video);
-});
-
-video.addEventListener('error',()=>{
-console.error('Video failed to load:',source.src,video.error);
-});
-
+video.addEventListener('loadeddata',()=>{if(video!==selectedVideo)video.pause();});
 video.addEventListener('volumechange',()=>{
-if(!video.muted||video.volume!==0){
-video.muted=true;
-video.defaultMuted=true;
-video.volume=0;
-}
+if(!video.muted||video.volume!==0){video.muted=true;video.defaultMuted=true;video.volume=0;}
 });
-
 const label=document.createElement('div');
 label.className='video-label';
 label.textContent=item.title||'';
 card.append(video,label);
 grid.append(card);
 });
-
-requestAnimationFrame(()=>requestAnimationFrame(updateSelectedVideo));
 }catch(e){
 grid.innerHTML='<p class="gallery-message">Videos could not be loaded. Please check videos.json.</p>';
 console.error(e);
@@ -335,9 +341,7 @@ try{
 const s=await loadJSON('site.json');
 const b=s.bio_detail||s.bio_intro||'';
 document.getElementById('bio-copy').textContent=b;
-}catch(e){
-document.getElementById('bio-copy').textContent='';
-}
+}catch(e){document.getElementById('bio-copy').textContent='';}
 }
 
 async function loadCV(){
@@ -352,7 +356,10 @@ const label=String(v.name||'Yacht').split('·').pop().trim().toUpperCase();
 return `<article class="cv-entry"><div class="cv-boat-frame"><img src="${esc(photo)}" alt="${esc(v.name)}" onerror="this.style.display='none'"><span>${esc(label)} PHOTO</span></div><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;
 };
 const entry=v=>`<article class="cv-entry no-photo"><div><span class="cv-date">${esc(v.date)}</span><h4>${esc(v.name)}</h4><p>${esc(v.description)}</p></div></article>`;
-const emailOnly=value=>{const match=String(value||'').match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);return match?match[0]:'';};
+const emailOnly=value=>{
+const match=String(value||'').match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+return match?match[0]:'';
+};
 root.innerHTML=`<div class="cv-layout">
 <aside class="cv-sidebar">${side('Contact',d.contact)}${side('Paperwork',d.paperwork)}${side('Personal',d.personal)}</aside>
 <div class="cv-main">
@@ -366,6 +373,15 @@ root.innerHTML='<p class="gallery-message">CV details could not be loaded. Pleas
 console.error(e);
 }
 }
+
+window.addEventListener('scroll',()=>{
+updateSelectedVideo();
+updateSelectedLifestyleVideo();
+},{passive:true});
+window.addEventListener('resize',()=>{
+updateSelectedVideo();
+updateSelectedLifestyleVideo();
+},{passive:true});
 
 loadLifestyleGallery();
 loadFoodGallery();
