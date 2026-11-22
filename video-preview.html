@@ -1,42 +1,67 @@
 
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Video Preview Gallery | Ash Bergh</title>
+<title>Video Organiser | Ash Bergh</title>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080909;color:#eeeae2;font-family:Arial,sans-serif;padding:25px}
-h1{font-family:Georgia,serif;font-weight:normal;color:#c6ad70}
-.intro{color:#aaa49a;font-size:14px;line-height:1.6;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
-.card{background:#151716;border:1px solid #39352b;padding:10px}
+body{margin:0;background:#080909;color:#eeeae2;font-family:Arial,sans-serif;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;color:#c6ad70;font-size:30px}
+.intro{color:#aaa49a;font-size:14px;line-height:1.7}
+.instructions{color:#c6ad70;font-size:13px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#151716;border:1px solid #39352b;padding:8px;min-width:0;touch-action:pan-y}
 .card video{width:100%;aspect-ratio:4/5;object-fit:contain;background:#000;display:block}
-.number{color:#c6ad70;font-size:12px;letter-spacing:2px;margin:12px 0 7px}
-.filename{font-size:12px;color:#eeeae2;overflow-wrap:anywhere;line-height:1.5}
-button{background:#c6ad70;border:0;padding:9px 13px;margin-top:10px;color:#080909;font-weight:bold;cursor:pointer}
+.handle{background:#29271f;color:#c6ad70;text-align:center;padding:13px 5px;margin-top:7px;font-size:12px;letter-spacing:1px;cursor:grab;touch-action:none}
+.number{text-align:center;color:#eeeae2;font-size:13px;padding:9px 0 3px}
+.card.sortable-ghost{opacity:.25}
+.card.sortable-chosen{border-color:#c6ad70}
+.actions{position:sticky;bottom:0;background:#080909;padding:15px 0;border-top:1px solid #39352b;margin-top:24px}
+button{width:100%;background:#c6ad70;border:0;padding:15px;color:#080909;font-weight:bold;font-size:14px;margin:5px 0;cursor:pointer}
+#output{display:none;margin-top:20px}
+#json{width:100%;height:300px;background:#151716;color:#eeeae2;border:1px solid #c6ad70;padding:12px;font-size:11px;line-height:1.5}
+.note{font-size:12px;color:#aaa49a;line-height:1.6}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
-<h1>Video Preview Gallery</h1>
-<p class="intro">Your private video organiser. Play each clip to identify it, then use its filename to rearrange the Videos list in Pages CMS. Only one preview plays at a time.</p>
-<div class="grid" id="gallery">Loading videos...</div>
+
+<h1>Video Organiser</h1>
+<p class="intro">Arrange your portfolio videos visually. Hold the gold bar beneath any video and drag it into the position you want.</p>
+<p class="instructions">HOLD THE GOLD BAR · DRAG TO REARRANGE</p>
+
+<div class="grid" id="gallery">Loading your videos...</div>
+
+<div class="actions">
+<button id="save">SAVE NEW ORDER</button>
+</div>
+
+<div id="output">
+<h2 style="color:#c6ad70;font-family:Georgia,serif;font-weight:normal">Your new video order</h2>
+<p class="note">Copy this list. Then replace the contents of videos.json in GitHub with it and commit your changes.</p>
+<button id="copy">COPY NEW ORDER</button>
+<textarea id="json" readonly></textarea>
+<p class="note" id="status"></p>
+</div>
 
 <script>
+let videos=[];
+
 async function load(){
 const response=await fetch('videos.json',{cache:'no-store'});
 if(!response.ok)throw Error('Could not load videos.json');
-const videos=await response.json();
+videos=await response.json();
+
 const gallery=document.getElementById('gallery');
 gallery.replaceChildren();
 
 videos.forEach((item,index)=>{
-if(!item.video_url)return;
-
 const card=document.createElement('div');
 card.className='card';
+card.dataset.index=index;
 
 const video=document.createElement('video');
 video.src=item.video_url;
@@ -46,23 +71,69 @@ video.controls=true;
 video.muted=true;
 
 video.addEventListener('play',()=>{
-document.querySelectorAll('video').forEach(other=>{
+document.querySelectorAll('#gallery video').forEach(other=>{
 if(other!==video)other.pause();
 });
 });
 
+const handle=document.createElement('div');
+handle.className='handle';
+handle.textContent='☰  HOLD & DRAG';
+
 const number=document.createElement('div');
 number.className='number';
-number.textContent='VIDEO '+String(index+1).padStart(2,'0');
 
-const filename=document.createElement('div');
-filename.className='filename';
-filename.textContent=item.video_url.split('/').pop();
-
-card.append(video,number,filename);
+card.append(video,handle,number);
 gallery.append(card);
 });
+
+updateNumbers();
+
+if(!window.Sortable)throw Error('Drag-and-drop could not load. Please refresh the page.');
+
+new Sortable(gallery,{
+animation:180,
+handle:'.handle',
+delay:180,
+delayOnTouchOnly:true,
+touchStartThreshold:4,
+onStart:()=>{
+document.querySelectorAll('#gallery video').forEach(v=>v.pause());
+},
+onEnd:updateNumbers
+});
 }
+
+function updateNumbers(){
+document.querySelectorAll('#gallery .card').forEach((card,index)=>{
+card.querySelector('.number').textContent='VIDEO '+String(index+1).padStart(2,'0');
+});
+}
+
+function getNewOrder(){
+const cards=[...document.querySelectorAll('#gallery .card')];
+return cards.map(card=>videos[Number(card.dataset.index)]);
+}
+
+document.getElementById('save').addEventListener('click',()=>{
+const ordered=getNewOrder();
+document.getElementById('json').value=JSON.stringify(ordered,null,2);
+document.getElementById('output').style.display='block';
+document.getElementById('status').textContent='Your new order is ready. Copy it and update videos.json in GitHub.';
+document.getElementById('output').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('copy').addEventListener('click',async()=>{
+const area=document.getElementById('json');
+try{
+await navigator.clipboard.writeText(area.value);
+document.getElementById('status').textContent='Copied! Now paste it into videos.json in GitHub.';
+}catch(e){
+area.focus();
+area.select();
+document.getElementById('status').textContent='Select the text above and copy it manually.';
+}
+});
 
 load().catch(error=>{
 document.getElementById('gallery').textContent=error.message;
