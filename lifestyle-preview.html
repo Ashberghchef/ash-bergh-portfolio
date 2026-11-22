@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lifestyle Organiser | Ash Bergh</title>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080909;color:#eeeae2;font-family:Arial,sans-serif;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;color:#c6ad70;font-size:30px}
+.intro{color:#aaa49a;font-size:14px;line-height:1.7}
+.instructions{color:#c6ad70;font-size:13px;margin:20px 0}
+.count{font-size:13px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#151716;border:1px solid #39352b;padding:8px;min-width:0;touch-action:pan-y}
+.card img,.card video{width:100%;aspect-ratio:4/5;object-fit:cover;background:#000;display:block}
+.handle{background:#29271f;color:#c6ad70;text-align:center;padding:13px 5px;margin-top:7px;font-size:12px;letter-spacing:1px;cursor:grab;touch-action:none}
+.number{text-align:center;font-size:13px;padding:9px 0 3px}
+.remove{background:#422522;color:#fff;border:1px solid #75413a;padding:10px 5px;margin-top:8px;width:100%;font-size:12px;cursor:pointer}
+.card.sortable-ghost{opacity:.25}
+.card.sortable-chosen{border-color:#c6ad70}
+.actions{position:sticky;bottom:0;background:#080909;padding:15px 0;border-top:1px solid #39352b;margin-top:24px}
+button{width:100%;background:#c6ad70;border:0;padding:15px;color:#080909;font-weight:bold;font-size:14px;margin:5px 0;cursor:pointer}
+#output{display:none;margin-top:20px}
+#json{width:100%;height:300px;background:#151716;color:#eeeae2;border:1px solid #c6ad70;padding:12px;font-size:11px;line-height:1.5}
+.note{font-size:12px;color:#aaa49a;line-height:1.6}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+
+<h1>Lifestyle Organiser</h1>
+<p class="intro">Arrange your lifestyle photos and videos visually. Hold the gold bar beneath any item and drag it into the position you want. Remove anything you don't want in the gallery.</p>
+<p class="instructions">HOLD THE GOLD BAR · DRAG TO REARRANGE</p>
+<div class="count" id="count">Loading Lifestyle media...</div>
+<div class="grid" id="gallery"></div>
+
+<div class="actions">
+<button id="save">SAVE NEW ORDER</button>
+</div>
+
+<div id="output">
+<h2 style="color:#c6ad70;font-family:Georgia,serif;font-weight:normal">Your updated Lifestyle gallery</h2>
+<p class="note">Copy this list, then replace the contents of lifestyle.json in GitHub and commit. Removed items disappear from the website gallery, but their original media files remain safely in GitHub.</p>
+<button id="copy">COPY UPDATED LIST</button>
+<textarea id="json" readonly></textarea>
+<p class="note" id="status"></p>
+</div>
+
+<script>
+let items=[];
+
+async function load(){
+const response=await fetch('lifestyle.json?v='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw Error('Could not load lifestyle.json');
+
+items=await response.json();
+render();
+
+if(!window.Sortable)throw Error('Drag-and-drop could not load. Please refresh.');
+
+new Sortable(document.getElementById('gallery'),{
+animation:180,
+handle:'.handle',
+delay:180,
+delayOnTouchOnly:true,
+touchStartThreshold:4,
+onStart:()=>{
+document.querySelectorAll('#gallery video').forEach(v=>v.pause());
+},
+onEnd:updateNumbers
+});
+}
+
+function render(){
+const gallery=document.getElementById('gallery');
+gallery.replaceChildren();
+
+items.forEach(item=>{
+const card=document.createElement('div');
+card.className='card';
+card.itemData=item;
+
+let media;
+
+if(item.type==='video'){
+media=document.createElement('video');
+media.src=new URL(item.src.replace(/^\/+/,''),document.baseURI).href;
+media.controls=true;
+media.muted=true;
+media.preload='metadata';
+media.playsInline=true;
+
+media.addEventListener('play',()=>{
+document.querySelectorAll('#gallery video').forEach(v=>{
+if(v!==media)v.pause();
+});
+});
+}else{
+media=document.createElement('img');
+media.src=new URL(item.src.replace(/^\/+/,''),document.baseURI).href;
+media.alt='Lifestyle photograph';
+media.loading='lazy';
+}
+
+const handle=document.createElement('div');
+handle.className='handle';
+handle.textContent='☰  HOLD & DRAG';
+
+const number=document.createElement('div');
+number.className='number';
+
+const remove=document.createElement('button');
+remove.className='remove';
+remove.textContent='REMOVE FROM GALLERY';
+
+remove.addEventListener('click',()=>{
+if(media.tagName==='VIDEO')media.pause();
+card.remove();
+updateNumbers();
+document.getElementById('output').style.display='none';
+});
+
+card.append(media,handle,number,remove);
+gallery.append(card);
+});
+
+updateNumbers();
+}
+
+function updateNumbers(){
+const cards=[...document.querySelectorAll('#gallery .card')];
+
+cards.forEach((card,index)=>{
+card.querySelector('.number').textContent=
+'ITEM '+String(index+1).padStart(2,'0')+
+' · '+(card.itemData.type==='video'?'VIDEO':'PHOTO');
+});
+
+document.getElementById('count').textContent=
+cards.length+' items in your Lifestyle gallery';
+}
+
+function getNewOrder(){
+return [...document.querySelectorAll('#gallery .card')]
+.map(card=>card.itemData);
+}
+
+document.getElementById('save').addEventListener('click',()=>{
+const ordered=getNewOrder();
+
+document.getElementById('json').value=
+JSON.stringify(ordered,null,2);
+
+document.getElementById('output').style.display='block';
+
+document.getElementById('status').textContent=
+ordered.length+' items ready. Copy the list and replace lifestyle.json in GitHub.';
+
+document.getElementById('output').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('copy').addEventListener('click',async()=>{
+const area=document.getElementById('json');
+
+try{
+await navigator.clipboard.writeText(area.value);
+document.getElementById('status').textContent=
+'Copied! Now paste it into lifestyle.json in GitHub.';
+}catch(e){
+area.focus();
+area.select();
+document.getElementById('status').textContent=
+'Select the text above and copy it manually.';
+}
+});
+
+load().catch(error=>{
+document.getElementById('gallery').textContent=error.message;
+document.getElementById('count').textContent='Could not load Lifestyle media';
+});
+</script>
+</body>
+</html>
+HTML
