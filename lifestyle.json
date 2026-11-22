@@ -1,13 +1,7 @@
 [
   {
-    "type": "image",
-    "src": "media/images/20240422_125227.jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
     "type": "video",
-    "src": "20240604_122841.mp4",
+    "src": "media/images/VID-20250816-WA0042.mp4",
     "title": "Lifestyle video",
     "visible": true
   },
@@ -25,14 +19,56 @@
   },
   {
     "type": "image",
-    "src": "media/images/20240513_203439.jpg",
+    "src": "media/images/20240422_125227.jpg",
+    "title": "Lifestyle",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/20240908_133344.jpg",
+    "title": "Lifestyle",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/IMG-20260329-WA0001.jpg",
+    "title": "Lifestyle",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/20240903_191752.jpg",
+    "title": "Lifestyle",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/IMG-20260320-WA0003.jpg",
     "title": "Lifestyle",
     "visible": true
   },
   {
     "type": "video",
-    "src": "media/images/20240423_123720.mp4",
+    "src": "media/images/20240918_151054.mp4",
     "title": "Lifestyle video",
+    "visible": true
+  },
+  {
+    "type": "video",
+    "src": "20240604_122841.mp4",
+    "title": "Lifestyle video",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/20250531_162728.jpg",
+    "title": "Lifestyle",
+    "visible": true
+  },
+  {
+    "type": "image",
+    "src": "media/images/20240513_203439.jpg",
+    "title": "Lifestyle",
     "visible": true
   },
   {
@@ -43,14 +79,8 @@
   },
   {
     "type": "video",
-    "src": "media/images/20240629_171221.mp4",
+    "src": "media/images/20240423_123720.mp4",
     "title": "Lifestyle video",
-    "visible": true
-  },
-  {
-    "type": "image",
-    "src": "media/images/20240903_191752.jpg",
-    "title": "Lifestyle",
     "visible": true
   },
   {
@@ -73,7 +103,7 @@
   },
   {
     "type": "image",
-    "src": "media/images/20240908_133344.jpg",
+    "src": "media/images/IMG-20250512-WA0028(1).jpg",
     "title": "Lifestyle",
     "visible": true
   },
@@ -85,14 +115,14 @@
   },
   {
     "type": "image",
-    "src": "media/images/20241003_134647.jpg",
+    "src": "media/images/IMG-20250503-WA0000.jpg",
     "title": "Lifestyle",
     "visible": true
   },
   {
-    "type": "video",
-    "src": "media/images/20240918_151054.mp4",
-    "title": "Lifestyle video",
+    "type": "image",
+    "src": "media/images/20241003_134647.jpg",
+    "title": "Lifestyle",
     "visible": true
   },
   {
@@ -103,14 +133,14 @@
   },
   {
     "type": "video",
-    "src": "media/images/20240924_111637.mp4",
+    "src": "media/images/20250520_170034.mp4",
     "title": "Lifestyle video",
     "visible": true
   },
   {
-    "type": "image",
-    "src": "media/images/20250531_162728.jpg",
-    "title": "Lifestyle",
+    "type": "video",
+    "src": "media/images/20250520_170359.mp4",
+    "title": "Lifestyle video",
     "visible": true
   },
   {
@@ -145,31 +175,7 @@
   },
   {
     "type": "image",
-    "src": "media/images/IMG-20250512-WA0028(1).jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
-    "type": "video",
-    "src": "media/images/20250520_170034.mp4",
-    "title": "Lifestyle video",
-    "visible": true
-  },
-  {
-    "type": "image",
     "src": "media/images/20260613_190545.jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
-    "type": "video",
-    "src": "media/images/20250520_170359.mp4",
-    "title": "Lifestyle video",
-    "visible": true
-  },
-  {
-    "type": "image",
-    "src": "media/images/IMG-20250503-WA0000.jpg",
     "title": "Lifestyle",
     "visible": true
   },
@@ -181,24 +187,6 @@
   },
   {
     "type": "image",
-    "src": "media/images/IMG-20260320-WA0003.jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
-    "type": "video",
-    "src": "media/images/VID-20250816-WA0042.mp4",
-    "title": "Lifestyle video",
-    "visible": true
-  },
-  {
-    "type": "image",
-    "src": "media/images/IMG-20260329-WA0001.jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
-    "type": "image",
     "src": "media/images/IMG-20260602-WA0017(1).jpg",
     "title": "Lifestyle",
     "visible": true
@@ -206,12 +194,6 @@
   {
     "type": "image",
     "src": "media/images/IMG-20260617-WA0006.jpg",
-    "title": "Lifestyle",
-    "visible": true
-  },
-  {
-    "type": "image",
-    "src": "media/images/IMG-20260617-WA0017.jpg",
     "title": "Lifestyle",
     "visible": true
   }
