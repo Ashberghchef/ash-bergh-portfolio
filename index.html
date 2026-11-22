@@ -108,9 +108,13 @@ const links=[...document.querySelectorAll('nav a')],sections=links.map(a=>docume
 sections.forEach(s=>{if(s)s.hidden=true});links.forEach(a=>a.classList.remove('active'));
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 
+let activeVideo=null;
+
 function pauseAllVideos(){
 document.querySelectorAll('#video-grid video').forEach(v=>v.pause());
+activeVideo=null;
 }
+
 function showPanel(id){
 sections.forEach(s=>{if(s)s.hidden=s.id!==id});
 if(id!=='videos')pauseAllVideos();
@@ -118,6 +122,7 @@ links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
 history.replaceState(null,'','#'+id);
 window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
 }
+
 links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPanel(a.getAttribute('href').slice(1));}));
 
 async function loadJSON(file){
@@ -198,23 +203,39 @@ grid.append(card);
 
 if(videoObserver)videoObserver.disconnect();
 
+const visibilityRatios=new Map();
+
 videoObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-const video=entry.target;
-if(entry.isIntersecting&&entry.intersectionRatio>=0.55&&!document.getElementById('videos').hidden){
-document.querySelectorAll('#video-grid video').forEach(other=>{
-if(other!==video)other.pause();
-});
-video.muted=true;
-video.defaultMuted=true;
-video.volume=0;
-const attempt=video.play();
-if(attempt&&attempt.catch)attempt.catch(()=>{});
-}else{
-video.pause();
+if(document.getElementById('videos').hidden){
+pauseAllVideos();
+return;
 }
+
+entries.forEach(entry=>{
+visibilityRatios.set(entry.target,entry.isIntersecting?entry.intersectionRatio:0);
 });
-},{threshold:[0,0.55,0.8]});
+
+const videos=[...grid.querySelectorAll('video')];
+
+const candidate=videos
+.filter(video=>(visibilityRatios.get(video)||0)>=0.85)
+.sort((a,b)=>(visibilityRatios.get(b)||0)-(visibilityRatios.get(a)||0))[0];
+
+if(candidate&&candidate!==activeVideo){
+videos.forEach(video=>{
+if(video!==candidate)video.pause();
+});
+
+activeVideo=candidate;
+activeVideo.muted=true;
+activeVideo.defaultMuted=true;
+activeVideo.volume=0;
+
+const attempt=activeVideo.play();
+if(attempt&&attempt.catch)attempt.catch(()=>{});
+}
+
+},{threshold:[0,0.85]});
 
 grid.querySelectorAll('video').forEach(video=>videoObserver.observe(video));
 
