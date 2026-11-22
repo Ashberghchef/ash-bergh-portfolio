@@ -3,13 +3,21 @@ media:
   - name: images
     label: Photos
     input: media/images
-    output: media/images
+    output: /media/images
     categories: [image]
+
   - name: documents
     label: Documents
     input: media/documents
     output: /media/documents
     categories: [document]
+
+  - name: videos
+    label: Video files
+    input: media/videos
+    output: /media/videos
+    categories: [video]
+    extensions: [mp4]
 
 content:
   - name: site
@@ -50,28 +58,6 @@ content:
         options:
           media: documents
           extensions: [pdf]
-
-  - name: cv_photos
-    label: CV Boat Photographs
-    type: file
-    path: cv.json
-    format: json
-    fields:
-      - name: moonshadow_image
-        label: Moonshadow photograph
-        type: image
-        options:
-          media: images
-      - name: diam_image
-        label: Diam photograph
-        type: image
-        options:
-          media: images
-      - name: primadonna_image
-        label: Primadonna photograph
-        type: image
-        options:
-          media: images
 
   - name: food
     label: Food photographs
@@ -133,8 +119,15 @@ content:
         options:
           media: images
       - name: video_url
-        label: Video link
-        type: string
+        label: Upload MP4 video
+        type: file
+        options:
+          media: videos
+          extensions: [mp4]
       - name: visible
         label: Show on website
         type: boolean
+
+settings:
+  content:
+    merge: true
