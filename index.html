@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -109,10 +108,45 @@ sections.forEach(s=>{if(s)s.hidden=true});links.forEach(a=>a.classList.remove('a
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 
 let activeVideo=null;
+let selectedVideo=null;
+let videoObserver=null;
+const visibilityRatios=new Map();
 
 function pauseAllVideos(){
 document.querySelectorAll('#video-grid video').forEach(v=>v.pause());
 activeVideo=null;
+selectedVideo=null;
+}
+
+function tryPlaySelected(video){
+if(!video||video!==selectedVideo||document.getElementById('videos').hidden)return;
+if(video.readyState<2)return;
+video.muted=true;
+video.defaultMuted=true;
+video.volume=0;
+const attempt=video.play();
+if(attempt&&attempt.then){
+attempt.then(()=>{if(video===selectedVideo)activeVideo=video;else video.pause();}).catch(error=>{
+/* Keep the selected video queued. The canplay/playing listeners retry when the browser is ready. */
+console.warn('Video playback will retry when ready:',error);
+});
+}else{activeVideo=video;}
+}
+
+function selectVideo(video){
+if(!video)return;
+selectedVideo=video;
+const videos=[...document.querySelectorAll('#video-grid video')];
+videos.forEach(v=>{if(v!==video)v.pause();});
+activeVideo=null;
+video.muted=true;
+video.defaultMuted=true;
+video.volume=0;
+/* Calling play() also asks the browser to fetch the media if it has not loaded yet. */
+tryPlaySelected(video);
+if(video.readyState<2){
+try{video.load();}catch(e){console.warn('Could not load selected video:',e);}
+}
 }
 
 function showPanel(id){
@@ -121,6 +155,7 @@ if(id!=='videos')pauseAllVideos();
 links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
 history.replaceState(null,'','#'+id);
 window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+if(id==='videos')requestAnimationFrame(updateSelectedVideo);
 }
 
 links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPanel(a.getAttribute('href').slice(1));}));
@@ -152,17 +187,24 @@ console.error(e);
 }
 }
 
-let videoObserver;
+function updateSelectedVideo(){
+if(document.getElementById('videos').hidden){pauseAllVideos();return;}
+const videos=[...document.querySelectorAll('#video-grid video')];
+const candidate=videos.filter(video=>(visibilityRatios.get(video)||0)>=0.85)
+.sort((a,b)=>(visibilityRatios.get(b)||0)-(visibilityRatios.get(a)||0))[0];
+if(candidate){if(candidate!==selectedVideo)selectVideo(candidate);else tryPlaySelected(candidate);}
+else{pauseAllVideos();}
+}
+
 async function loadVideos(){
 const grid=document.getElementById('video-grid');
 try{
 const items=await loadJSON('videos.json');
 grid.replaceChildren();
-
+visibilityRatios.clear();
 items.filter(v=>v.visible===true&&v.video_url&&v.video_url.trim()).forEach(item=>{
 const card=document.createElement('div');
 card.className='video-card';
-
 const video=document.createElement('video');
 video.muted=true;
 video.defaultMuted=true;
@@ -176,90 +218,42 @@ video.setAttribute('muted','');
 video.setAttribute('playsinline','');
 video.setAttribute('disablepictureinpicture','');
 video.setAttribute('controlslist','nodownload noplaybackrate noremoteplayback');
-
-if(item.thumbnail){
-video.poster=new URL(item.thumbnail.replace(/^\/+/,''),document.baseURI).href;
-}
-
+if(item.thumbnail){video.poster=new URL(item.thumbnail.replace(/^\/+/,''),document.baseURI).href;}
 const source=document.createElement('source');
 source.src=new URL(item.video_url.replace(/^\/+/,''),document.baseURI).href;
 source.type='video/mp4';
 video.append(source);
 
-/* Load a still frame for each video without autoplaying it. */
+/* When the browser finishes buffering, retry only if this is still the selected clip. */
 video.addEventListener('loadedmetadata',()=>{
-if(!item.thumbnail&&video.duration>0){
-try{
-video.currentTime=Math.min(0.1,video.duration/10);
-}catch(e){}
-}
+if(!item.thumbnail&&video.duration>0){try{video.currentTime=Math.min(0.1,video.duration/10);}catch(e){}}
+if(video===selectedVideo)tryPlaySelected(video);
 });
-
-video.addEventListener('loadeddata',()=>{
-if(video!==activeVideo)video.pause();
+video.addEventListener('loadeddata',()=>{if(video!==selectedVideo)video.pause();else tryPlaySelected(video);});
+video.addEventListener('canplay',()=>{if(video===selectedVideo)tryPlaySelected(video);});
+video.addEventListener('playing',()=>{
+if(video!==selectedVideo){video.pause();return;}
+activeVideo=video;
 });
-
-video.addEventListener('seeked',()=>{
-if(video!==activeVideo)video.pause();
-});
-
+video.addEventListener('seeked',()=>{if(video!==selectedVideo)video.pause();else tryPlaySelected(video);});
+video.addEventListener('error',()=>{console.error('Video failed to load:',source.src,video.error);});
 video.addEventListener('volumechange',()=>{
-if(!video.muted||video.volume!==0){
-video.muted=true;
-video.defaultMuted=true;
-video.volume=0;
-}
+if(!video.muted||video.volume!==0){video.muted=true;video.defaultMuted=true;video.volume=0;}
 });
-
 const label=document.createElement('div');
 label.className='video-label';
 label.textContent=item.title||'';
-
 card.append(video,label);
 grid.append(card);
-
-/* Ask the browser to fetch the first frame, but do not start playback. */
 video.load();
 });
 
 if(videoObserver)videoObserver.disconnect();
-
-const visibilityRatios=new Map();
-
 videoObserver=new IntersectionObserver(entries=>{
-if(document.getElementById('videos').hidden){
-pauseAllVideos();
-return;
-}
-
-entries.forEach(entry=>{
-visibilityRatios.set(entry.target,entry.isIntersecting?entry.intersectionRatio:0);
-});
-
-const videos=[...grid.querySelectorAll('video')];
-
-const candidate=videos
-.filter(video=>(visibilityRatios.get(video)||0)>=0.85)
-.sort((a,b)=>(visibilityRatios.get(b)||0)-(visibilityRatios.get(a)||0))[0];
-
-if(candidate&&candidate!==activeVideo){
-videos.forEach(video=>{
-if(video!==candidate)video.pause();
-});
-
-activeVideo=candidate;
-activeVideo.muted=true;
-activeVideo.defaultMuted=true;
-activeVideo.volume=0;
-
-const attempt=activeVideo.play();
-if(attempt&&attempt.catch)attempt.catch(()=>{});
-}
-
+entries.forEach(entry=>{visibilityRatios.set(entry.target,entry.isIntersecting?entry.intersectionRatio:0);});
+updateSelectedVideo();
 },{threshold:[0,0.85]});
-
 grid.querySelectorAll('video').forEach(video=>videoObserver.observe(video));
-
 }catch(e){
 grid.innerHTML='<p class="gallery-message">Videos could not be loaded. Please check videos.json.</p>';
 console.error(e);
