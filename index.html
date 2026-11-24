@@ -19,7 +19,8 @@ header{height:76px;background:#080909;display:flex;align-items:center;padding:12
 .hero img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:brightness(.68)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.72) 100%)}
 .hero-copy{position:relative;z-index:1;padding:0 clamp(28px,8.3vw,120px) 78px}
-.kicker{color:var(--gold);letter-spacing:.28em;font-size:clamp(8px,1.15vw,12px);white-space:nowrap;text-transform:uppercase;margin:0 0 20px}
+.kicker{color:var(--gold);letter-spacing:.28em;font-size:clamp(8px,1.15vw,12px);white-space:nowrap;text-transform:uppercase;margin:0 0 10px}
+.kicker-secondary{color:var(--gold);letter-spacing:.28em;font-size:clamp(8px,1.15vw,12px);font-weight:400;white-space:nowrap;text-transform:uppercase;margin:0 0 20px}
 h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(64px,11vw,116px);font-weight:300;line-height:.9;margin:0}
 .experience-line{font-size:clamp(11px,1.25vw,14px);letter-spacing:.1em;font-weight:400;margin:22px 0 0;line-height:1.8;max-width:1000px}
 nav{height:70px;position:sticky;top:0;z-index:5;background:rgba(8,9,9,.97);backdrop-filter:blur(10px);border-bottom:1px solid #292824;display:flex;justify-content:center;align-items:center;gap:clamp(5px,1vw,12px);padding:18px clamp(10px,3vw,24px)}
@@ -86,7 +87,7 @@ header{height:64px;padding:10px 20px}
 .brand{font-size:17px;letter-spacing:.2em}
 .hero{height:calc(100svh - 122px);min-height:390px}
 .hero-copy{padding-bottom:58px}
-.hero-copy .kicker{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px)}
+.hero-copy .kicker,.hero-copy .kicker-secondary{letter-spacing:.12em;font-size:clamp(10px,1.55vw,15px)}
 nav{height:58px;gap:5px;padding:9px 10px}
 nav a{font-size:clamp(8px,2.5vw,10px);letter-spacing:.08em;padding:10px 5px;flex:1 1 0;min-width:0}
 .gallery,.video-grid,.lifestyle-grid{grid-template-columns:1fr;gap:28px}
@@ -119,7 +120,8 @@ section{padding:55px 0}
 <div class="hero">
 <img id="hero-image" src="media/images/file_000000001680820b8695dfe57b372632.png" alt="Ash Bergh">
 <div class="hero-copy">
-<p class="kicker">Private Chef · Yacht Specialist · Aspiring Deckhand</p>
+<p class="kicker">Private Chef · Yacht Specialist</p>
+<p class="kicker-secondary">Aspiring Deckhand</p>
 <h1>Ash Bergh</h1>
 <p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p>
 </div>
