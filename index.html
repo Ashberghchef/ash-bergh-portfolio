@@ -115,7 +115,7 @@ section{padding:55px 0}
 <div class="hero">
 <img id="hero-image" src="media/images/file_000000001680820b8695dfe57b372632.png" alt="Ash Bergh">
 <div class="hero-copy">
-<p class="kicker">Private Chef · Yacht Specialist</p>
+<p class="kicker">Private Chef · Yacht Specialist · Aspiring Deckhand</p>
 <h1>Ash Bergh</h1>
 <p class="experience-line">Professional experience across UHNW private programmes, charter programmes, motor yachts, monohull and multihull sailing yachts, households, events and restaurant environments.</p>
 </div>
@@ -387,7 +387,7 @@ root.innerHTML=`<div class="cv-layout">
 <aside class="cv-sidebar">${side('Contact',d.contact)}${side('Paperwork',d.paperwork)}${side('Personal',d.personal)}</aside>
 <div class="cv-main">
 <div class="cv-section"><h3>Yachting Experience</h3>${d.yachting.map(boat).join('')}</div>
-<div class="cv-section"><h3>Land-Based Experience</h3>${d.land_based.map(entry).join('')}</div>
+<div class="cv-section"><h3>Beyond the Yachts</h3>${d.land_based.map(entry).join('')}</div>
 <div class="cv-section"><h3>Professional References</h3>
 <div class="cv-references">${d.references.map(r=>`<div class="cv-ref"><strong>${esc(r.name)}</strong><p class="cv-ref-role">${esc(r.role)}</p><p class="cv-ref-contact">${esc(emailOnly(r.contact))}</p></div>`).join('')}</div>
 <div class="cv-reference-letter">
